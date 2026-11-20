@@ -1,0 +1,162 @@
+- generic [active] [ref=f3e1]:
+  - link "Saltar al contenido" [ref=f3e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - generic [ref=f3e4]:
+    - paragraph [ref=f3e5]:
+      - generic [ref=f3e9]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+    - generic [ref=f3e10]:
+      - generic [ref=f3e11]: 4,6 ★ · 57 reseñas en Google
+      - link "913 82 08 64" [ref=f3e15] [cursor=pointer]:
+        - /url: tel:+34913820864
+  - banner [ref=f3e18]:
+    - generic [ref=f3e19]:
+      - link "Clínica Dental Hortaleza — inicio" [ref=f3e20] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f3e24]:
+          - generic [ref=f3e25]: Clínica dental
+          - generic [ref=f3e26]: Hortaleza
+      - navigation "Navegación principal" [ref=f3e27]:
+        - link "Tratamientos" [ref=f3e28] [cursor=pointer]:
+          - /url: /tratamientos
+        - link "La clínica" [ref=f3e29] [cursor=pointer]:
+          - /url: /clinica
+        - link "Equipo" [ref=f3e30] [cursor=pointer]:
+          - /url: /equipo
+        - link "Blog" [ref=f3e31] [cursor=pointer]:
+          - /url: /blog
+        - link "Contacto" [ref=f3e32] [cursor=pointer]:
+          - /url: /contacto
+      - link "Pedir cita" [ref=f3e34] [cursor=pointer]:
+        - /url: /pedir-cita
+  - main [ref=f3e38]:
+    - generic [ref=f3e40]:
+      - navigation "Migas de pan" [ref=f3e41]:
+        - list [ref=f3e42]:
+          - listitem [ref=f3e43]:
+            - link "Inicio" [ref=f3e44] [cursor=pointer]:
+              - /url: /
+          - listitem [aria-hidden] [ref=f3e45]: /
+          - listitem [ref=f3e46]: La clínica
+      - heading "Una clínica de barrio, con medios de clínica grande" [level=1] [ref=f3e47]
+      - paragraph [ref=f3e48]: Estamos en Calle Boyacá, 5 (28033), en el corazón de Hortaleza. Dos gabinetes, diagnóstico digital y un equipo que explica cada paso antes de darlo.
+    - region "Un espacio pensado para que estés cómodo" [ref=f3e49]:
+      - generic [ref=f3e50]:
+        - generic [ref=f3e51]:
+          - generic [ref=f3e52]:
+            - paragraph [ref=f3e53]: Instalaciones
+            - heading "Un espacio pensado para que estés cómodo" [level=2] [ref=f3e54]
+          - link "Pedir cita" [ref=f3e55] [cursor=pointer]:
+            - /url: /pedir-cita
+        - generic [ref=f3e59]:
+          - figure "Recepción" [ref=f3e60]:
+            - img "Recepción de la Clínica Dental Hortaleza" [ref=f3e61]
+          - figure "Gabinete de tratamiento" [ref=f3e63]:
+            - img "Gabinete de tratamiento con sillón dental" [ref=f3e64]
+          - figure "Segundo gabinete" [ref=f3e66]:
+            - img "Segundo gabinete de la clínica" [ref=f3e67]
+          - figure "Entrada en Calle Boyacá, 5" [ref=f3e69]:
+            - img "Entrada de la Clínica Dental Hortaleza en Calle Boyacá 5" [ref=f3e70]
+    - region "Diagnóstico digital, sin moldes" [ref=f3e72]:
+      - generic [ref=f3e73]:
+        - generic [ref=f3e74]:
+          - paragraph [ref=f3e75]: Equipamiento
+          - heading "Diagnóstico digital, sin moldes" [level=2] [ref=f3e76]
+          - paragraph [ref=f3e77]: La radiografía panorámica y el escáner intraoral nos permiten ver el problema y planificar el tratamiento sobre un modelo 3D de tu boca. Se acabaron las cubetas de alginato y las esperas para saber qué está pasando.
+          - list [ref=f3e78]:
+            - listitem [ref=f3e79]: Imágenes en el momento, revisadas contigo en pantalla.
+            - listitem [ref=f3e82]: Modelos digitales para prótesis, férulas y ortodoncia.
+            - listitem [ref=f3e85]: Comparación de la evolución entre revisiones.
+          - link "Ver el diagnóstico digital" [ref=f3e88] [cursor=pointer]:
+            - /url: /tratamientos/diagnostico-digital
+        - generic [ref=f3e91]:
+          - heading "Cómo llegar" [level=3] [ref=f3e92]
+          - generic [ref=f3e93]:
+            - paragraph [ref=f3e94]: Clínica Dental Hortaleza
+            - paragraph [ref=f3e95]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+            - paragraph [ref=f3e96]: Hortaleza, Madrid
+          - generic [ref=f3e98]:
+            - term [ref=f3e99]: Lunes a viernes
+            - definition [ref=f3e100]: 09:30 – 14:00 · 16:00 – 20:00
+          - generic [ref=f3e101]:
+            - link "913 82 08 64" [ref=f3e102] [cursor=pointer]:
+              - /url: tel:+34913820864
+            - link "Contacto" [ref=f3e105] [cursor=pointer]:
+              - /url: /contacto
+    - generic [ref=f3e107]:
+      - generic [ref=f3e109]:
+        - paragraph [ref=f3e114]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+        - paragraph [ref=f3e115]: El mapa se carga solo si lo necesitas, para no enviar datos a terceros al abrir la página.
+        - button "Cargar mapa" [ref=f3e116]
+      - paragraph [ref=f3e117]:
+        - link "Cómo llegar en Google Maps" [ref=f3e118] [cursor=pointer]:
+          - /url: https://www.google.com/maps/dir/?api=1&destination=Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2C%2028033%20Madrid
+  - contentinfo [ref=f3e121]:
+    - generic [ref=f3e122]:
+      - generic [ref=f3e123]:
+        - link "Clínica Dental Hortaleza — inicio" [ref=f3e124] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f3e128]:
+            - generic [ref=f3e129]: Clínica dental
+            - generic [ref=f3e130]: Hortaleza
+        - paragraph [ref=f3e131]: Tu sonrisa es nuestra prioridad. Odontología familiar en el barrio de Hortaleza, con diagnóstico digital y tratamientos planificados sin prisas.
+        - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f3e133] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+          - generic [ref=f3e157]: 4,6
+          - generic [ref=f3e158]: 57 reseñas en Google
+      - generic [ref=f3e159]:
+        - heading "Contacto" [level=2] [ref=f3e160]
+        - generic [ref=f3e161]:
+          - paragraph [ref=f3e162]:
+            - generic [ref=f3e166]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 MadridHortaleza, Madrid
+          - paragraph [ref=f3e167]:
+            - link "913 82 08 64" [ref=f3e170] [cursor=pointer]:
+              - /url: tel:+34913820864
+      - generic [ref=f3e171]:
+        - heading "Horario" [level=2] [ref=f3e172]
+        - generic [ref=f3e174]:
+          - term [ref=f3e175]: Lunes a viernes
+          - definition [ref=f3e176]: 09:30 – 14:00 · 16:00 – 20:00
+        - paragraph [ref=f3e177]: Abrimos a las 9:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 y te la confirmamos.
+      - generic [ref=f3e178]:
+        - heading "Enlaces" [level=2] [ref=f3e179]
+        - list [ref=f3e180]:
+          - listitem [ref=f3e181]:
+            - link "Tratamientos" [ref=f3e182] [cursor=pointer]:
+              - /url: /tratamientos
+          - listitem [ref=f3e183]:
+            - link "La clínica" [ref=f3e184] [cursor=pointer]:
+              - /url: /clinica
+          - listitem [ref=f3e185]:
+            - link "Equipo" [ref=f3e186] [cursor=pointer]:
+              - /url: /equipo
+          - listitem [ref=f3e187]:
+            - link "Blog" [ref=f3e188] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f3e189]:
+            - link "Pedir cita" [ref=f3e190] [cursor=pointer]:
+              - /url: /pedir-cita
+          - listitem [ref=f3e191]:
+            - link "Contacto" [ref=f3e192] [cursor=pointer]:
+              - /url: /contacto
+    - generic [ref=f3e194]:
+      - paragraph [ref=f3e195]: © 2026 Clínica Dental Hortaleza. Todos los derechos reservados.
+      - list [ref=f3e196]:
+        - listitem [ref=f3e197]:
+          - link "Aviso legal" [ref=f3e198] [cursor=pointer]:
+            - /url: /legal/aviso-legal
+        - listitem [ref=f3e199]:
+          - link "Privacidad" [ref=f3e200] [cursor=pointer]:
+            - /url: /legal/privacidad
+        - listitem [ref=f3e201]:
+          - link "Cookies" [ref=f3e202] [cursor=pointer]:
+            - /url: /legal/cookies
+  - generic [ref=f3e203]:
+    - link "913 82 08 64" [ref=f3e204] [cursor=pointer]:
+      - /url: tel:+34913820864
+    - link "Pedir cita" [ref=f3e207] [cursor=pointer]:
+      - /url: /pedir-cita
+  - generic [ref=f3e213]:
+    - button "Menu" [ref=f3e214]
+    - button "Inspect" [ref=f3e220]
+    - button "Audit" [ref=f3e224]
+    - button "Settings" [ref=f3e229]

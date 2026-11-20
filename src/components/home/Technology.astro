@@ -1,0 +1,73 @@
+---
+import Icon from '../common/Icon.astro';
+import Picture from '../common/Picture.astro';
+
+const items = [
+  {
+    icon: 'scanner',
+    title: 'Escáner intraoral',
+    text: 'Sustituye a los moldes de alginato: capturamos la forma de tus dientes en 3D, con más precisión y sin reflejo nauseoso.',
+  },
+  {
+    icon: 'tooth',
+    title: 'Radiografía panorámica',
+    text: 'Una imagen de los dos maxilares para valorar hueso, raíces y muelas del juicio con una dosis muy baja.',
+  },
+];
+---
+
+<section class="border-y border-brand-900/10 bg-white py-16 sm:py-20" aria-labelledby="tecnologia-titulo">
+  <div class="container-page grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+    <div>
+      <p class="eyebrow">Tecnología</p>
+      <h2 id="tecnologia-titulo" class="mt-3 font-display text-3xl text-ink-900 sm:text-4xl">
+        Diagnosticar bien es la mitad del tratamiento
+      </h2>
+      <p class="mt-4 text-ink-700">
+        Antes de proponer nada vemos lo que no se ve a simple vista. En la misma cita de
+        diagnóstico obtenemos las imágenes y las revisamos contigo en pantalla, señalando qué
+        ocurre y qué opciones hay.
+      </p>
+
+      <ul class="mt-8 space-y-5">
+        {
+          items.map((item) => (
+            <li class="flex gap-4">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+                <Icon name={item.icon} class="h-6 w-6" />
+              </span>
+              <div>
+                <h3 class="font-display text-lg text-ink-900">{item.title}</h3>
+                <p class="mt-1 text-sm leading-relaxed text-ink-500">{item.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a href="/tratamientos/diagnostico-digital" class="btn-secondary mt-8">
+        <Icon name="scanner" class="h-4 w-4" />
+        Cómo es la cita de diagnóstico
+      </a>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="overflow-hidden rounded-3xl border border-brand-900/10 sm:mt-8">
+        <Picture
+          src="/assets/img/clinica-sala-verde.webp"
+          alt="Sala de tratamiento de la Clínica Dental Hortaleza"
+          class="h-full w-full object-cover"
+          sizes="(min-width: 1024px) 25vw, 50vw"
+        />
+      </div>
+      <div class="overflow-hidden rounded-3xl border border-brand-900/10">
+        <Picture
+          src="/assets/img/clinica-sala-morada.webp"
+          alt="Gabinete de la Clínica Dental Hortaleza"
+          class="h-full w-full object-cover"
+          sizes="(min-width: 1024px) 25vw, 50vw"
+        />
+      </div>
+    </div>
+  </div>
+</section>

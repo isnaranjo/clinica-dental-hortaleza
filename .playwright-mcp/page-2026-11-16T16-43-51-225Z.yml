@@ -1,0 +1,154 @@
+- generic [active] [ref=f5e1]:
+  - link "Saltar al contenido" [ref=f5e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - generic [ref=f5e4]:
+    - paragraph [ref=f5e5]:
+      - generic [ref=f5e9]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+    - generic [ref=f5e10]:
+      - generic [ref=f5e11]: 4,6 ★ · 57 reseñas en Google
+      - link "913 82 08 64" [ref=f5e15] [cursor=pointer]:
+        - /url: tel:+34913820864
+  - banner [ref=f5e18]:
+    - generic [ref=f5e19]:
+      - link "Clínica Dental Hortaleza — inicio" [ref=f5e20] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f5e24]:
+          - generic [ref=f5e25]: Clínica dental
+          - generic [ref=f5e26]: Hortaleza
+      - navigation "Navegación principal" [ref=f5e27]:
+        - link "Tratamientos" [ref=f5e28] [cursor=pointer]:
+          - /url: /tratamientos
+        - link "La clínica" [ref=f5e29] [cursor=pointer]:
+          - /url: /clinica
+        - link "Equipo" [ref=f5e30] [cursor=pointer]:
+          - /url: /equipo
+        - link "Blog" [ref=f5e31] [cursor=pointer]:
+          - /url: /blog
+        - link "Contacto" [ref=f5e32] [cursor=pointer]:
+          - /url: /contacto
+      - link "Pedir cita" [ref=f5e34] [cursor=pointer]:
+        - /url: /pedir-cita
+  - main [ref=f5e38]:
+    - generic [ref=f5e40]:
+      - navigation "Migas de pan" [ref=f5e41]:
+        - list [ref=f5e42]:
+          - listitem [ref=f5e43]:
+            - link "Inicio" [ref=f5e44] [cursor=pointer]:
+              - /url: /
+          - listitem [aria-hidden] [ref=f5e45]: /
+          - listitem [ref=f5e46]: Blog
+      - heading "Salud bucodental, explicada" [level=1] [ref=f5e47]
+      - paragraph [ref=f5e48]: Dudas frecuentes que resolvemos en consulta, por escrito y sin tecnicismos innecesarios.
+    - generic [ref=f5e51]:
+      - article [ref=f5e52]:
+        - link [ref=f5e53] [cursor=pointer]:
+          - /url: /blog/implante-dental-hortaleza-valoracion
+          - img "Implante dental unitario integrado en el maxilar" [ref=f5e54]
+        - generic [ref=f5e55]:
+          - paragraph [ref=f5e56]:
+            - time [ref=f5e57]: 6 de octubre de 2026
+            - text: · 5 min de lectura
+          - heading [level=2] [ref=f5e58]:
+            - 'link "Implante dental en Hortaleza: qué se hace en la valoración" [ref=f5e59] [cursor=pointer]':
+              - /url: /blog/implante-dental-hortaleza-valoracion
+          - paragraph [ref=f5e60]: Qué incluye la primera visita de implantes en Hortaleza (28033), por qué se pide una radiografía panorámica y qué preguntas conviene llevar a la cita.
+          - link "Leer artículo" [ref=f5e61] [cursor=pointer]:
+            - /url: /blog/implante-dental-hortaleza-valoracion
+      - article [ref=f5e64]:
+        - link [ref=f5e65] [cursor=pointer]:
+          - /url: /blog/encias-que-sangran-periodontitis
+          - img "Detalle de las encías y los tejidos que sostienen los dientes" [ref=f5e66]
+        - generic [ref=f5e67]:
+          - paragraph [ref=f5e68]:
+            - time [ref=f5e69]: 22 de septiembre de 2026
+            - text: · 4 min de lectura
+          - heading [level=2] [ref=f5e70]:
+            - 'link "Encías que sangran: cuándo es gingivitis y cuándo periodontitis" [ref=f5e71] [cursor=pointer]':
+              - /url: /blog/encias-que-sangran-periodontitis
+          - paragraph [ref=f5e72]: Sangrado al cepillarse, mal aliento persistente o un diente que se mueve son señales de enfermedad periodontal. Qué significan y cuándo consultar en Hortaleza.
+          - link "Leer artículo" [ref=f5e73] [cursor=pointer]:
+            - /url: /blog/encias-que-sangran-periodontitis
+      - article [ref=f5e76]:
+        - link [ref=f5e77] [cursor=pointer]:
+          - /url: /blog/blanqueamiento-dental-una-sesion
+          - img "Resultado de un blanqueamiento dental profesional" [ref=f5e78]
+        - generic [ref=f5e79]:
+          - paragraph [ref=f5e80]:
+            - time [ref=f5e81]: 10 de septiembre de 2026
+            - text: · 4 min de lectura
+          - heading [level=2] [ref=f5e82]:
+            - 'link "Blanqueamiento dental en una sesión: qué esperar y qué no" [ref=f5e83] [cursor=pointer]':
+              - /url: /blog/blanqueamiento-dental-una-sesion
+          - paragraph [ref=f5e84]: Cómo funciona el blanqueamiento con luz LED, cuánto dura la sesión, qué sensibilidad es normal y en qué casos conviene esperar antes de blanquear.
+          - link "Leer artículo" [ref=f5e85] [cursor=pointer]:
+            - /url: /blog/blanqueamiento-dental-una-sesion
+  - contentinfo [ref=f5e88]:
+    - generic [ref=f5e89]:
+      - generic [ref=f5e90]:
+        - link "Clínica Dental Hortaleza — inicio" [ref=f5e91] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f5e95]:
+            - generic [ref=f5e96]: Clínica dental
+            - generic [ref=f5e97]: Hortaleza
+        - paragraph [ref=f5e98]: Tu sonrisa es nuestra prioridad. Odontología familiar en el barrio de Hortaleza, con diagnóstico digital y tratamientos planificados sin prisas.
+        - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f5e100] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+          - generic [ref=f5e124]: 4,6
+          - generic [ref=f5e125]: 57 reseñas en Google
+      - generic [ref=f5e126]:
+        - heading "Contacto" [level=2] [ref=f5e127]
+        - generic [ref=f5e128]:
+          - paragraph [ref=f5e129]:
+            - generic [ref=f5e133]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 MadridHortaleza, Madrid
+          - paragraph [ref=f5e134]:
+            - link "913 82 08 64" [ref=f5e137] [cursor=pointer]:
+              - /url: tel:+34913820864
+      - generic [ref=f5e138]:
+        - heading "Horario" [level=2] [ref=f5e139]
+        - generic [ref=f5e141]:
+          - term [ref=f5e142]: Lunes a viernes
+          - definition [ref=f5e143]: 09:30 – 14:00 · 16:00 – 20:00
+        - paragraph [ref=f5e144]: Abrimos a las 9:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 y te la confirmamos.
+      - generic [ref=f5e145]:
+        - heading "Enlaces" [level=2] [ref=f5e146]
+        - list [ref=f5e147]:
+          - listitem [ref=f5e148]:
+            - link "Tratamientos" [ref=f5e149] [cursor=pointer]:
+              - /url: /tratamientos
+          - listitem [ref=f5e150]:
+            - link "La clínica" [ref=f5e151] [cursor=pointer]:
+              - /url: /clinica
+          - listitem [ref=f5e152]:
+            - link "Equipo" [ref=f5e153] [cursor=pointer]:
+              - /url: /equipo
+          - listitem [ref=f5e154]:
+            - link "Blog" [ref=f5e155] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f5e156]:
+            - link "Pedir cita" [ref=f5e157] [cursor=pointer]:
+              - /url: /pedir-cita
+          - listitem [ref=f5e158]:
+            - link "Contacto" [ref=f5e159] [cursor=pointer]:
+              - /url: /contacto
+    - generic [ref=f5e161]:
+      - paragraph [ref=f5e162]: © 2026 Clínica Dental Hortaleza. Todos los derechos reservados.
+      - list [ref=f5e163]:
+        - listitem [ref=f5e164]:
+          - link "Aviso legal" [ref=f5e165] [cursor=pointer]:
+            - /url: /legal/aviso-legal
+        - listitem [ref=f5e166]:
+          - link "Privacidad" [ref=f5e167] [cursor=pointer]:
+            - /url: /legal/privacidad
+        - listitem [ref=f5e168]:
+          - link "Cookies" [ref=f5e169] [cursor=pointer]:
+            - /url: /legal/cookies
+  - generic [ref=f5e170]:
+    - link "913 82 08 64" [ref=f5e171] [cursor=pointer]:
+      - /url: tel:+34913820864
+    - link "Pedir cita" [ref=f5e174] [cursor=pointer]:
+      - /url: /pedir-cita
+  - generic [ref=f5e180]:
+    - button "Menu" [ref=f5e181]
+    - button "Inspect" [ref=f5e187]
+    - button "Audit" [ref=f5e191]
+    - button "Settings" [ref=f5e196]

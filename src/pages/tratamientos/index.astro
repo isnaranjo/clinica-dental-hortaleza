@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TreatmentCard from '../../components/treatments/TreatmentCard.astro';
+import Icon from '../../components/common/Icon.astro';
+import { clinic, siteUrl } from '../../data/clinic';
+import { breadcrumbSchema } from '../../lib/schema-markup';
+
+const tratamientos = (await getCollection('tratamientos')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Tratamientos', path: '/tratamientos/' },
+  ]),
+  {
+    '@type': 'ItemList',
+    name: 'Tratamientos de la Clínica Dental Hortaleza',
+    itemListElement: tratamientos.map((tratamiento, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tratamiento.data.title,
+      url: `${siteUrl}/tratamientos/${tratamiento.id}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Tratamientos dentales en Hortaleza, Madrid"
+  description="Implantes, ortodoncia, endodoncias, prótesis, estética dental y diagnóstico digital en la Clínica Dental Hortaleza (28033). Conoce cada tratamiento y pide cita."
+  extraSchema={extraSchema}
+>
+  <section class="border-b border-brand-900/10 bg-cream-100/60">
+    <div class="container-page py-14 sm:py-16">
+      <nav aria-label="Migas de pan" class="text-xs text-ink-500">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="no-underline hover:text-brand-800">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-ink-700">Tratamientos</li>
+        </ol>
+      </nav>
+
+      <h1 class="mt-5 max-w-3xl font-display text-4xl leading-tight text-ink-900 sm:text-5xl">
+        Tratamientos dentales en Hortaleza
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink-700">
+        Seis áreas de trabajo, un mismo criterio: explicarte qué pasa, qué opciones hay y cuánto
+        cuesta antes de empezar. Todos los tratamientos se realizan en la clínica de Calle Boyacá, 5
+        (28033 Madrid).
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/pedir-cita" class="btn-primary">
+          <Icon name="calendar" class="h-4 w-4" />
+          Pedir cita
+        </a>
+        <a href="/tratamientos/diagnostico-digital" class="btn-secondary">
+          <Icon name="scanner" class="h-4 w-4" />
+          Empezar por el diagnóstico
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16" aria-label="Listado de tratamientos">
+    <div class="container-page">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          tratamientos.map((tratamiento) => (
+            <TreatmentCard
+              slug={tratamiento.id}
+              title={tratamiento.data.shortTitle}
+              summary={tratamiento.data.summary}
+              duration={tratamiento.data.duration}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-brand-900/10 bg-white py-14 sm:py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="eyebrow">Primera visita</p>
+        <h2 class="mt-3 font-display text-3xl text-ink-900">Cómo funciona empezar</h2>
+        <p class="mt-4 text-ink-700">
+          No todos los tratamientos necesitan el mismo tiempo. Por eso la reserva se calcula según
+          la duración real de cada cita.
+        </p>
+      </div>
+
+      <ol class="space-y-6">
+        <li class="flex gap-4">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-semibold text-white">1</span>
+          <div>
+            <h3 class="font-semibold text-ink-900">Elige tratamiento y hora</h3>
+            <p class="mt-1 text-sm leading-relaxed text-ink-500">
+              La web solo muestra huecos donde cabe la cita completa: una revisión de 30 minutos o
+              una valoración de implantes de 90, por ejemplo.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-semibold text-white">2</span>
+          <div>
+            <h3 class="font-semibold text-ink-900">Te confirmamos</h3>
+            <p class="mt-1 text-sm leading-relaxed text-ink-500">
+              Recepción revisa la solicitud y te confirma la cita por teléfono o correo.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-semibold text-white">3</span>
+          <div>
+            <h3 class="font-semibold text-ink-900">Diagnóstico y plan</h3>
+            <p class="mt-1 text-sm leading-relaxed text-ink-500">
+              Exploración, radiografía y escáner si hacen falta. Sales con un plan y un presupuesto
+              por escrito.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pb-6">
+    <div class="container-page">
+      <div class="flex flex-col items-start justify-between gap-4 rounded-3xl bg-brand-900 px-7 py-8 text-white sm:flex-row sm:items-center">
+        <p class="font-display text-2xl">¿No sabes qué tratamiento necesitas?</p>
+        <a
+          href="/pedir-cita?tratamiento=primera-visita"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-900 no-underline hover:bg-brand-50"
+        >
+          <Icon name="calendar" class="h-4 w-4" />
+          Pedir una revisión ({clinic.phoneDisplay})
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

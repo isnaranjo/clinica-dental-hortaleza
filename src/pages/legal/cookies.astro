@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/legal/LegalPage.astro';
+import { siteUrl } from '../../data/clinic';
+import { breadcrumbSchema } from '../../lib/schema-markup';
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Política de cookies', path: '/legal/cookies/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Política de cookies"
+  description="Esta web no instala cookies propias ni de analítica. El mapa de OpenStreetMap solo se carga cuando lo pides expresamente."
+  noindex
+  extraSchema={extraSchema}
+>
+  <LegalPage
+    title="Política de cookies"
+    description="Política alineada con la normativa española (LSSI-CE) y las directrices de la AEPD. Si en el futuro se añaden herramientas de analítica o publicidad, será necesario actualizarla e implantar un banner de consentimiento previo."
+    updated="12 de noviembre de 2026"
+  >
+    <h2>Qué son las cookies</h2>
+    <p>
+      Las cookies son pequeños archivos que un sitio web guarda en tu navegador. Pueden servir para
+      recordar preferencias, medir visitas o mostrar publicidad. También existen tecnologías
+      similares, como el almacenamiento local del navegador.
+    </p>
+
+    <h2>Qué usa esta web</h2>
+    <p>
+      <strong>Esta web no instala cookies propias ni cookies de analítica o publicidad.</strong> No
+      usamos Google Analytics ni píxeles de redes sociales, por lo que no necesitas aceptar ningún
+      banner para navegar.
+    </p>
+
+    <h2>El mapa se carga solo si lo pides</h2>
+    <p>
+      Las páginas con mapa muestran una imagen estática con un botón «Cargar mapa». Al pulsarlo se
+      inserta un mapa de OpenStreetMap. Hasta ese momento no se envía ninguna petición a ese
+      servicio. OpenStreetMap puede registrar la IP y datos técnicos de la conexión según su propia
+      política de privacidad, y solo ocurre si decides cargar el mapa.
+    </p>
+
+    <h2>Enlaces a otros servicios</h2>
+    <p>
+      Los enlaces a Google Maps, Google (reseñas) u otros sitios externos se abren en una pestaña
+      nueva y se rigen por las políticas de esos servicios. No cargamos recursos de Google de forma
+      automática en la página.
+    </p>
+
+    <h2>Cómo cambiar tus preferencias</h2>
+    <p>
+      Puedes bloquear o eliminar cookies desde la configuración de tu navegador. Como esta web no
+      las utiliza, no encontrarás un panel de preferencias: no hay nada que consentir.
+    </p>
+
+    <h2>Cambios en esta política</h2>
+    <p>
+      Si incorporamos en el futuro herramientas que instalen cookies (por ejemplo, analítica de
+      visitas), actualizaremos esta página y mostraremos un banner para recabar tu consentimiento
+      previo, con la opción de rechazar el uso no esencial.
+    </p>
+  </LegalPage>
+</BaseLayout>

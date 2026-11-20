@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import Services from '../components/home/Services.astro';
+import Technology from '../components/home/Technology.astro';
+import LocationMap from '../components/common/LocationMap.astro';
+import GoogleReviewsBadge from '../components/common/GoogleReviewsBadge.astro';
+import Icon from '../components/common/Icon.astro';
+import { addressLine, clinic, telHref } from '../data/clinic';
+import { openingHoursLines } from '../lib/format';
+import { faqSchema } from '../lib/schema-markup';
+
+const hours = openingHoursLines();
+
+const faqs = [
+  {
+    question: '¿Dónde está la Clínica Dental Hortaleza?',
+    answer:
+      'Estamos en Calle Boyacá, n.º 5, 1.º Dcha, en el barrio de Hortaleza (28033 Madrid), dentro del distrito de Hortaleza.',
+  },
+  {
+    question: '¿Cómo puedo pedir cita?',
+    answer:
+      'Puedes solicitar cita online en esta web eligiendo tratamiento, día y hora, o llamarnos al 913 82 08 64. La solicitud queda pendiente de confirmación por recepción.',
+  },
+  {
+    question: '¿Cuánto dura la primera visita?',
+    answer:
+      'La revisión general dura unos 30 minutos. La valoración de implantes, que incluye radiografía panorámica y estudio del caso, se reserva con 90 minutos.',
+  },
+  {
+    question: '¿Qué tecnología utilizáis para el diagnóstico?',
+    answer:
+      'Trabajamos con radiografía panorámica digital y escáner intraoral, que sustituye a los moldes tradicionales de alginato y permite planificar prótesis, férulas y ortodoncia sobre un modelo 3D.',
+  },
+];
+
+const extraSchema = [faqSchema(faqs)];
+---
+
+<BaseLayout
+  title="Clínica dental en Hortaleza (28033) | Clínica Dental Hortaleza"
+  description="Clínica dental en Calle Boyacá 5, Hortaleza (28033 Madrid): implantes, ortodoncia, endodoncias, prótesis y estética dental. 4,6 ★ en Google. Pide cita online."
+  extraSchema={extraSchema}
+>
+  <Hero />
+
+  <Services />
+
+  <Technology />
+
+  <section class="py-16 sm:py-20" aria-labelledby="confianza-titulo">
+    <div class="container-page grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="eyebrow">Por qué la clínica</p>
+        <h2 id="confianza-titulo" class="mt-3 font-display text-3xl text-ink-900 sm:text-4xl">
+          Cerca de casa, sin prisas y con todo explicado
+        </h2>
+
+        <ul class="mt-8 space-y-6">
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <Icon name="map-pin" class="h-5 w-5" />
+            </span>
+            <div>
+              <h3 class="font-semibold text-ink-900">En el barrio de Hortaleza</h3>
+              <p class="mt-1 text-sm leading-relaxed text-ink-500">
+                Calle Boyacá, 5, 1.º Dcha (28033). Un punto de referencia para las familias del
+                barrio y de los distritos cercanos.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <Icon name="scanner" class="h-5 w-5" />
+            </span>
+            <div>
+              <h3 class="font-semibold text-ink-900">Diagnóstico digital en la misma cita</h3>
+              <p class="mt-1 text-sm leading-relaxed text-ink-500">
+                Radiografía panorámica y escáner intraoral para ver el problema y planificar el
+                tratamiento sin moldes.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <Icon name="shield" class="h-5 w-5" />
+            </span>
+            <div>
+              <h3 class="font-semibold text-ink-900">Presupuesto por escrito antes de empezar</h3>
+              <p class="mt-1 text-sm leading-relaxed text-ink-500">
+                Te contamos fases, materiales y alternativas. Decides con la información delante,
+                sin compromiso.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="/pedir-cita" class="btn-primary">
+            <Icon name="calendar" class="h-4 w-4" />
+            Pedir cita
+          </a>
+          <a href="/clinica" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 no-underline hover:underline">
+            Conocer la clínica
+            <Icon name="arrow-right" class="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-brand-900/10 bg-white p-7">
+        <GoogleReviewsBadge class="mb-5" />
+        <p class="font-display text-2xl leading-snug text-ink-900">
+          «{clinic.slogan}»
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-ink-500">
+          La valoración de Google es la suma de la experiencia de nuestros pacientes en el barrio.
+          Si ya nos has visitado, puedes dejar tu opinión en Google: nos ayuda a seguir mejorando.
+        </p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-brand-900/10 pt-5 text-sm">
+          <div>
+            <dt class="text-ink-500">Reseñas</dt>
+            <dd class="font-display text-2xl text-ink-900">{clinic.rating.count}</dd>
+          </div>
+          <div>
+            <dt class="text-ink-500">Valoración media</dt>
+            <dd class="font-display text-2xl text-ink-900">
+              {String(clinic.rating.value).replace('.', ',')} / 5
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-brand-900/10 bg-white py-16 sm:py-20" aria-labelledby="faq-titulo">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 id="faq-titulo" class="mt-3 font-display text-3xl text-ink-900">Antes de tu primera visita</h2>
+        <p class="mt-4 text-sm leading-relaxed text-ink-500">
+          Si tu duda no está aquí, llámanos al {clinic.phoneDisplay} y te la resolvemos sin
+          compromiso.
+        </p>
+      </div>
+
+      <div class="divide-y divide-brand-900/10 border-y border-brand-900/10">
+        {
+          faqs.map((faq) => (
+            <details class="group py-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-medium text-ink-900">
+                {faq.question}
+                <span class="text-brand-700 transition-transform group-open:rotate-45" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-ink-500">{faq.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20" aria-labelledby="ubicacion-titulo">
+    <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <p class="eyebrow">Dónde estamos</p>
+        <h2 id="ubicacion-titulo" class="mt-3 font-display text-3xl text-ink-900">
+          Calle Boyacá, 5 · Hortaleza
+        </h2>
+        <address class="mt-4 not-italic text-ink-700">
+          <p class="font-medium text-ink-900">{clinic.name}</p>
+          <p>{addressLine}</p>
+          <p>{clinic.address.district}, Madrid</p>
+        </address>
+
+        <dl class="mt-6 space-y-3 text-sm">
+          {
+            hours.map((line) => (
+              <div class="flex justify-between gap-6 border-b border-brand-900/10 pb-2">
+                <dt class="text-ink-500">{line.days}</dt>
+                <dd class="font-medium text-ink-900">{line.hours}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <p class="mt-4 text-xs leading-relaxed text-ink-500">{clinic.hoursNote}</p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={telHref} class="btn-secondary">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+          <a href="/contacto" class="btn-ghost">
+            Contacto y horarios
+          </a>
+        </div>
+      </div>
+
+      <LocationMap />
+    </div>
+  </section>
+
+  <section class="pb-4">
+    <div class="container-page">
+      <div class="rounded-[2rem] bg-brand-900 px-7 py-10 text-white sm:px-12 sm:py-14">
+        <div class="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+          <div class="max-w-xl">
+            <h2 class="font-display text-3xl leading-tight sm:text-4xl">
+              Pide tu cita y salimos de dudas
+            </h2>
+            <p class="mt-3 text-sm leading-relaxed text-brand-100">
+              Elige tratamiento, día y hora. Te confirmamos por teléfono o correo. Si lo prefieres,
+              llámanos al {clinic.phoneDisplay}.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:shrink-0">
+            <a
+              href="/pedir-cita"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-brand-900 no-underline transition-colors hover:bg-brand-50"
+            >
+              <Icon name="calendar" class="h-4 w-4" />
+              Pedir cita online
+            </a>
+            <a
+              href={telHref}
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-white/10"
+            >
+              <Icon name="phone" class="h-4 w-4" />
+              {clinic.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

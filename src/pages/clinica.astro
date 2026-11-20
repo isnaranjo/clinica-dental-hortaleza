@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Picture from '../components/common/Picture.astro';
+import LocationMap from '../components/common/LocationMap.astro';
+import Icon from '../components/common/Icon.astro';
+import { addressLine, clinic, siteUrl, telHref } from '../data/clinic';
+import { openingHoursLines } from '../lib/format';
+import { breadcrumbSchema } from '../lib/schema-markup';
+
+const hours = openingHoursLines();
+
+const fotos = [
+  {
+    src: '/assets/img/clinica-recepcion.webp',
+    alt: 'Recepción de la Clínica Dental Hortaleza',
+    caption: 'Recepción',
+  },
+  {
+    src: '/assets/img/clinica-sala-verde.webp',
+    alt: 'Gabinete de tratamiento con sillón dental',
+    caption: 'Gabinete de tratamiento',
+  },
+  {
+    src: '/assets/img/clinica-sala-morada.webp',
+    alt: 'Segundo gabinete de la clínica',
+    caption: 'Segundo gabinete',
+  },
+  {
+    src: '/assets/img/clinica-cartel.webp',
+    alt: 'Entrada de la Clínica Dental Hortaleza en Calle Boyacá 5',
+    caption: 'Entrada en Calle Boyacá, 5',
+  },
+];
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'La clínica', path: '/clinica/' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="La clínica dental en Hortaleza: instalaciones y equipo"
+  description="Conoce la Clínica Dental Hortaleza: instalaciones en Calle Boyacá 5 (28033), gabinetes, escáner intraoral y radiografía panorámica. Pide cita."
+  extraSchema={extraSchema}
+>
+  <section class="border-b border-brand-900/10 bg-cream-100/60">
+    <div class="container-page py-14 sm:py-16">
+      <nav aria-label="Migas de pan" class="text-xs text-ink-500">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="no-underline hover:text-brand-800">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-ink-700">La clínica</li>
+        </ol>
+      </nav>
+
+      <h1 class="mt-5 max-w-3xl font-display text-4xl leading-tight text-ink-900 sm:text-5xl">
+        Una clínica de barrio, con medios de clínica grande
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink-700">
+        Estamos en Calle Boyacá, 5 (28033), en el corazón de Hortaleza. Dos gabinetes, diagnóstico
+        digital y un equipo que explica cada paso antes de darlo.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16" aria-labelledby="instalaciones">
+    <div class="container-page">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-xl">
+          <p class="eyebrow">Instalaciones</p>
+          <h2 id="instalaciones" class="mt-3 font-display text-3xl text-ink-900">
+            Un espacio pensado para que estés cómodo
+          </h2>
+        </div>
+        <a href="/pedir-cita" class="btn-primary">
+          <Icon name="calendar" class="h-4 w-4" />
+          Pedir cita
+        </a>
+      </div>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        {
+          fotos.map((foto, index) => (
+            <figure class:list={['overflow-hidden rounded-3xl border border-brand-900/10 bg-white', index === 0 && 'sm:col-span-2']}>
+              <Picture
+                src={foto.src}
+                alt={foto.alt}
+                class:list={['w-full object-cover', index === 0 ? 'h-80' : 'h-64']}
+                sizes={index === 0 ? '100vw' : '(min-width: 640px) 50vw, 100vw'}
+              />
+              <figcaption class="px-5 py-3 text-xs text-ink-500">{foto.caption}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-brand-900/10 bg-white py-14 sm:py-16" aria-labelledby="equipamiento">
+    <div class="container-page grid gap-10 lg:grid-cols-[1fr_1fr]">
+      <div>
+        <p class="eyebrow">Equipamiento</p>
+        <h2 id="equipamiento" class="mt-3 font-display text-3xl text-ink-900">
+          Diagnóstico digital, sin moldes
+        </h2>
+        <p class="mt-4 text-ink-700">
+          La radiografía panorámica y el escáner intraoral nos permiten ver el problema y planificar
+          el tratamiento sobre un modelo 3D de tu boca. Se acabaron las cubetas de alginato y las
+          esperas para saber qué está pasando.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex items-start gap-2.5 text-ink-700">
+            <Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+            Imágenes en el momento, revisadas contigo en pantalla.
+          </li>
+          <li class="flex items-start gap-2.5 text-ink-700">
+            <Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+            Modelos digitales para prótesis, férulas y ortodoncia.
+          </li>
+          <li class="flex items-start gap-2.5 text-ink-700">
+            <Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+            Comparación de la evolución entre revisiones.
+          </li>
+        </ul>
+
+        <a href="/tratamientos/diagnostico-digital" class="btn-secondary mt-7">
+          <Icon name="scanner" class="h-4 w-4" />
+          Ver el diagnóstico digital
+        </a>
+      </div>
+
+      <div class="rounded-3xl border border-brand-900/10 bg-cream-50 p-6">
+        <h3 class="font-display text-xl text-ink-900">Cómo llegar</h3>
+        <address class="mt-3 text-sm not-italic text-ink-700">
+          <p class="font-medium text-ink-900">{clinic.name}</p>
+          <p>{addressLine}</p>
+          <p>{clinic.address.district}, Madrid</p>
+        </address>
+
+        <dl class="mt-5 space-y-2 border-t border-brand-900/10 pt-5 text-sm">
+          {
+            hours.map((line) => (
+              <div class="flex justify-between gap-6">
+                <dt class="text-ink-500">{line.days}</dt>
+                <dd class="font-medium text-ink-900">{line.hours}</dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a href={telHref} class="btn-secondary">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+          <a href="/contacto" class="btn-ghost">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16">
+    <div class="container-page">
+      <LocationMap />
+    </div>
+  </section>
+</BaseLayout>

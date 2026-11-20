@@ -1,0 +1,29 @@
+---
+import manifest from '../../data/images.json';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  priority?: boolean;
+  sizes?: string;
+}
+
+const { src, alt, class: className = '', priority = false, sizes } = Astro.props;
+
+const entry = manifest.images.find((image) => image.src === src);
+const width = entry?.width ?? 1200;
+const height = entry?.height ?? 800;
+---
+
+<img
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  sizes={sizes}
+  loading={priority ? 'eager' : 'lazy'}
+  fetchpriority={priority ? 'high' : undefined}
+  decoding="async"
+  class={className}
+/>

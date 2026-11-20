@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/common/Icon.astro';
+import Picture from '../components/common/Picture.astro';
+import { clinic, siteUrl, telHref } from '../data/clinic';
+import { breadcrumbSchema } from '../lib/schema-markup';
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Equipo', path: '/equipo/' },
+  ]),
+];
+
+const principios = [
+  {
+    icon: 'tooth',
+    title: 'Escuchar antes de tratar',
+    text: 'La primera parte de la cita es tuya: qué te molesta, desde cuándo y qué te preocupa del tratamiento. El diagnóstico empieza ahí.',
+  },
+  {
+    icon: 'scanner',
+    title: 'Enseñarte lo que vemos',
+    text: 'Radiografías y escaneados en pantalla, señalando el problema. Decidir es más fácil cuando entiendes lo que pasa.',
+  },
+  {
+    icon: 'shield',
+    title: 'Decir también lo que no hace falta',
+    text: 'Si un tratamiento puede esperar o hay una alternativa más conservadora, te lo decimos. El presupuesto es una propuesta, no una imposición.',
+  },
+];
+---
+
+<BaseLayout
+  title="Equipo de la Clínica Dental Hortaleza"
+  description="Cómo trabaja el equipo de la Clínica Dental Hortaleza: diagnóstico explicado, tratamientos conservadores y presupuesto por escrito en el barrio de Hortaleza (28033)."
+  extraSchema={extraSchema}
+>
+  <section class="border-b border-brand-900/10 bg-cream-100/60">
+    <div class="container-page grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+      <div>
+        <nav aria-label="Migas de pan" class="text-xs text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="/" class="no-underline hover:text-brand-800">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="text-ink-700">Equipo</li>
+          </ol>
+        </nav>
+
+        <h1 class="mt-5 font-display text-4xl leading-tight text-ink-900 sm:text-5xl">
+          Quién te atiende
+        </h1>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink-700">
+          Un equipo pequeño, estable y del barrio. Odontología general, implantes, endodoncia,
+          prótesis, ortodoncia y estética, coordinadas por recepción para que no tengas que repetir
+          tu historia en cada cita.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="/pedir-cita" class="btn-primary">
+            <Icon name="calendar" class="h-4 w-4" />
+            Pedir cita
+          </a>
+          <a href={telHref} class="btn-secondary">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+        </div>
+      </div>
+
+      <div class="overflow-hidden rounded-[1.75rem] border border-brand-900/10 bg-white">
+        <Picture
+          src="/assets/img/clinica-sala-morada.webp"
+          alt="Gabinete de la Clínica Dental Hortaleza"
+          class="h-full w-full object-cover"
+          priority
+          sizes="(min-width: 1024px) 35vw, 100vw"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16" aria-labelledby="principios">
+    <div class="container-page">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 id="principios" class="mt-3 max-w-2xl font-display text-3xl text-ink-900">
+        Tres cosas que no negociamos
+      </h2>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {
+          principios.map((principio) => (
+            <div class="rounded-3xl border border-brand-900/10 bg-white p-6">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
+                <Icon name={principio.icon} class="h-6 w-6" />
+              </span>
+              <h3 class="mt-4 font-display text-lg text-ink-900">{principio.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-500">{principio.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-6">
+    <div class="container-page">
+      <div class="rounded-3xl border border-brand-900/10 bg-white p-7 sm:p-9">
+        <h2 class="font-display text-2xl text-ink-900">¿Quieres saber quién te va a atender?</h2>
+        <p class="mt-3 max-w-2xl text-sm leading-relaxed text-ink-700">
+          Llámanos y te contamos qué profesional lleva tu caso y qué formación tiene en el
+          tratamiento que necesitas. También puedes preguntarlo en recepción al llegar.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href={telHref} class="btn-secondary">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+          <a href="/contacto" class="btn-ghost">Escribir a la clínica</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

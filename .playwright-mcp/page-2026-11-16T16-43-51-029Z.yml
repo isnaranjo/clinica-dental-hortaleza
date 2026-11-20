@@ -1,0 +1,140 @@
+- generic [active] [ref=f4e1]:
+  - link "Saltar al contenido" [ref=f4e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - generic [ref=f4e4]:
+    - paragraph [ref=f4e5]:
+      - generic [ref=f4e9]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+    - generic [ref=f4e10]:
+      - generic [ref=f4e11]: 4,6 ★ · 57 reseñas en Google
+      - link "913 82 08 64" [ref=f4e15] [cursor=pointer]:
+        - /url: tel:+34913820864
+  - banner [ref=f4e18]:
+    - generic [ref=f4e19]:
+      - link "Clínica Dental Hortaleza — inicio" [ref=f4e20] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e24]:
+          - generic [ref=f4e25]: Clínica dental
+          - generic [ref=f4e26]: Hortaleza
+      - navigation "Navegación principal" [ref=f4e27]:
+        - link "Tratamientos" [ref=f4e28] [cursor=pointer]:
+          - /url: /tratamientos
+        - link "La clínica" [ref=f4e29] [cursor=pointer]:
+          - /url: /clinica
+        - link "Equipo" [ref=f4e30] [cursor=pointer]:
+          - /url: /equipo
+        - link "Blog" [ref=f4e31] [cursor=pointer]:
+          - /url: /blog
+        - link "Contacto" [ref=f4e32] [cursor=pointer]:
+          - /url: /contacto
+      - link "Pedir cita" [ref=f4e34] [cursor=pointer]:
+        - /url: /pedir-cita
+  - main [ref=f4e38]:
+    - generic [ref=f4e40]:
+      - generic [ref=f4e41]:
+        - navigation "Migas de pan" [ref=f4e42]:
+          - list [ref=f4e43]:
+            - listitem [ref=f4e44]:
+              - link "Inicio" [ref=f4e45] [cursor=pointer]:
+                - /url: /
+            - listitem [aria-hidden] [ref=f4e46]: /
+            - listitem [ref=f4e47]: Equipo
+        - heading "Quién te atiende" [level=1] [ref=f4e48]
+        - paragraph [ref=f4e49]: Un equipo pequeño, estable y del barrio. Odontología general, implantes, endodoncia, prótesis, ortodoncia y estética, coordinadas por recepción para que no tengas que repetir tu historia en cada cita.
+        - generic [ref=f4e50]:
+          - link "Pedir cita" [ref=f4e51] [cursor=pointer]:
+            - /url: /pedir-cita
+          - link "913 82 08 64" [ref=f4e55] [cursor=pointer]:
+            - /url: tel:+34913820864
+      - img "Gabinete de la Clínica Dental Hortaleza" [ref=f4e59]
+    - region "Tres cosas que no negociamos" [ref=f4e60]:
+      - generic [ref=f4e61]:
+        - paragraph [ref=f4e62]: Cómo trabajamos
+        - heading "Tres cosas que no negociamos" [level=2] [ref=f4e63]
+        - generic [ref=f4e64]:
+          - generic [ref=f4e65]:
+            - heading "Escuchar antes de tratar" [level=3] [ref=f4e69]
+            - paragraph [ref=f4e70]: "La primera parte de la cita es tuya: qué te molesta, desde cuándo y qué te preocupa del tratamiento. El diagnóstico empieza ahí."
+          - generic [ref=f4e71]:
+            - heading "Enseñarte lo que vemos" [level=3] [ref=f4e75]
+            - paragraph [ref=f4e76]: Radiografías y escaneados en pantalla, señalando el problema. Decidir es más fácil cuando entiendes lo que pasa.
+          - generic [ref=f4e77]:
+            - heading "Decir también lo que no hace falta" [level=3] [ref=f4e82]
+            - paragraph [ref=f4e83]: Si un tratamiento puede esperar o hay una alternativa más conservadora, te lo decimos. El presupuesto es una propuesta, no una imposición.
+    - generic [ref=f4e86]:
+      - heading "¿Quieres saber quién te va a atender?" [level=2] [ref=f4e87]
+      - paragraph [ref=f4e88]: Llámanos y te contamos qué profesional lleva tu caso y qué formación tiene en el tratamiento que necesitas. También puedes preguntarlo en recepción al llegar.
+      - generic [ref=f4e89]:
+        - link "913 82 08 64" [ref=f4e90] [cursor=pointer]:
+          - /url: tel:+34913820864
+        - link "Escribir a la clínica" [ref=f4e93] [cursor=pointer]:
+          - /url: /contacto
+  - contentinfo [ref=f4e94]:
+    - generic [ref=f4e95]:
+      - generic [ref=f4e96]:
+        - link "Clínica Dental Hortaleza — inicio" [ref=f4e97] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f4e101]:
+            - generic [ref=f4e102]: Clínica dental
+            - generic [ref=f4e103]: Hortaleza
+        - paragraph [ref=f4e104]: Tu sonrisa es nuestra prioridad. Odontología familiar en el barrio de Hortaleza, con diagnóstico digital y tratamientos planificados sin prisas.
+        - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f4e106] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+          - generic [ref=f4e130]: 4,6
+          - generic [ref=f4e131]: 57 reseñas en Google
+      - generic [ref=f4e132]:
+        - heading "Contacto" [level=2] [ref=f4e133]
+        - generic [ref=f4e134]:
+          - paragraph [ref=f4e135]:
+            - generic [ref=f4e139]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 MadridHortaleza, Madrid
+          - paragraph [ref=f4e140]:
+            - link "913 82 08 64" [ref=f4e143] [cursor=pointer]:
+              - /url: tel:+34913820864
+      - generic [ref=f4e144]:
+        - heading "Horario" [level=2] [ref=f4e145]
+        - generic [ref=f4e147]:
+          - term [ref=f4e148]: Lunes a viernes
+          - definition [ref=f4e149]: 09:30 – 14:00 · 16:00 – 20:00
+        - paragraph [ref=f4e150]: Abrimos a las 9:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 y te la confirmamos.
+      - generic [ref=f4e151]:
+        - heading "Enlaces" [level=2] [ref=f4e152]
+        - list [ref=f4e153]:
+          - listitem [ref=f4e154]:
+            - link "Tratamientos" [ref=f4e155] [cursor=pointer]:
+              - /url: /tratamientos
+          - listitem [ref=f4e156]:
+            - link "La clínica" [ref=f4e157] [cursor=pointer]:
+              - /url: /clinica
+          - listitem [ref=f4e158]:
+            - link "Equipo" [ref=f4e159] [cursor=pointer]:
+              - /url: /equipo
+          - listitem [ref=f4e160]:
+            - link "Blog" [ref=f4e161] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f4e162]:
+            - link "Pedir cita" [ref=f4e163] [cursor=pointer]:
+              - /url: /pedir-cita
+          - listitem [ref=f4e164]:
+            - link "Contacto" [ref=f4e165] [cursor=pointer]:
+              - /url: /contacto
+    - generic [ref=f4e167]:
+      - paragraph [ref=f4e168]: © 2026 Clínica Dental Hortaleza. Todos los derechos reservados.
+      - list [ref=f4e169]:
+        - listitem [ref=f4e170]:
+          - link "Aviso legal" [ref=f4e171] [cursor=pointer]:
+            - /url: /legal/aviso-legal
+        - listitem [ref=f4e172]:
+          - link "Privacidad" [ref=f4e173] [cursor=pointer]:
+            - /url: /legal/privacidad
+        - listitem [ref=f4e174]:
+          - link "Cookies" [ref=f4e175] [cursor=pointer]:
+            - /url: /legal/cookies
+  - generic [ref=f4e176]:
+    - link "913 82 08 64" [ref=f4e177] [cursor=pointer]:
+      - /url: tel:+34913820864
+    - link "Pedir cita" [ref=f4e180] [cursor=pointer]:
+      - /url: /pedir-cita
+  - generic [ref=f4e186]:
+    - button "Menu" [ref=f4e187]
+    - button "Inspect" [ref=f4e193]
+    - button "Audit" [ref=f4e197]
+    - button "Settings" [ref=f4e202]

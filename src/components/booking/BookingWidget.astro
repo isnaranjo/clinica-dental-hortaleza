@@ -1,0 +1,353 @@
+---
+import { clinic } from '../../data/clinic';
+import Icon from '../common/Icon.astro';
+
+const treatments = clinic.booking.treatments;
+const horizon = clinic.booking.horizonDays;
+---
+
+<div class="rounded-[2rem] border border-brand-900/10 bg-white p-6 sm:p-8">
+  <form id="booking-form" novalidate data-horizon-days={horizon} class="space-y-8">
+    <fieldset>
+      <legend class="flex items-center gap-2.5 font-display text-xl text-ink-900">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white">1</span>
+        ¿Qué necesitas?
+      </legend>
+
+      <div class="mt-4 grid gap-2 sm:grid-cols-2">
+        {
+          treatments.map((treatment) => (
+            <label class="flex cursor-pointer items-start gap-3 rounded-2xl border border-brand-900/15 p-3.5 transition-colors has-[:checked]:border-brand-700 has-[:checked]:bg-brand-50">
+              <input
+                type="radio"
+                name="treatment"
+                value={treatment.slug}
+                class="mt-0.5 h-4 w-4 shrink-0 accent-[var(--color-brand-700)]"
+                required
+              />
+              <span>
+                <span class="block text-sm font-medium text-ink-900">{treatment.name}</span>
+                <span class="mt-0.5 block text-xs text-ink-500">{treatment.duration} min · {treatment.short}</span>
+              </span>
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="flex items-center gap-2.5 font-display text-xl text-ink-900">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white">2</span>
+        Elige el día
+      </legend>
+      <div class="mt-4 max-w-xs">
+        <label for="date" class="block text-xs font-medium text-ink-500">Fecha</label>
+        <input type="date" id="date" name="date" class="field mt-1.5" required />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="flex items-center gap-2.5 font-display text-xl text-ink-900">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white">3</span>
+        Elige la hora
+      </legend>
+
+      <div id="slots" role="group" aria-label="Horas disponibles" class="mt-4"></div>
+      <p id="slots-status" role="status" aria-live="polite" class="mt-2 text-sm text-ink-500">
+        Elige tratamiento y fecha para ver las horas disponibles.
+      </p>
+      <input type="hidden" name="time" id="time" />
+    </fieldset>
+
+    <fieldset>
+      <legend class="flex items-center gap-2.5 font-display text-xl text-ink-900">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-semibold text-white">4</span>
+        Tus datos
+      </legend>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div>
+          <label for="name" class="block text-xs font-medium text-ink-500">Nombre y apellidos</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="field mt-1.5"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="80"
+          />
+        </div>
+        <div>
+          <label for="phone" class="block text-xs font-medium text-ink-500">Teléfono</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="field mt-1.5"
+            autocomplete="tel"
+            inputmode="tel"
+            required
+            maxlength="20"
+          />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="email" class="block text-xs font-medium text-ink-500">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="field mt-1.5"
+            autocomplete="email"
+            required
+            maxlength="120"
+          />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="notes" class="block text-xs font-medium text-ink-500">
+            ¿Algo que debamos saber? (opcional)
+          </label>
+          <textarea id="notes" name="notes" rows="3" maxlength="500" class="field mt-1.5"></textarea>
+        </div>
+      </div>
+
+      <label class="mt-4 flex items-start gap-3 text-xs leading-relaxed text-ink-500">
+        <input type="checkbox" name="consent" value="si" class="mt-0.5 h-4 w-4 shrink-0 accent-[var(--color-brand-700)]" required />
+        <span>
+          He leído y acepto la
+          <a href="/legal/privacidad" class="text-brand-700 underline underline-offset-2">política de privacidad</a>
+          y autorizo el uso de mis datos para gestionar esta cita. Los datos de salud que
+          indiques se tratan con la confidencialidad propia de la relación sanitaria.
+        </span>
+      </label>
+
+      <!-- Campo trampa para bots: invisible para personas -->
+      <div class="sr-only" aria-hidden="true">
+        <label for="website">No rellenar</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <button type="submit" id="booking-submit" class="btn-primary mt-5 w-full" disabled>
+        <Icon name="calendar" class="h-4 w-4" />
+        <span id="booking-submit-label">Solicitar cita</span>
+      </button>
+
+      <p id="booking-message" role="alert" class="mt-3 text-sm text-red-700"></p>
+
+      <p class="mt-3 text-xs leading-relaxed text-ink-500">
+        La cita queda pendiente de confirmación por recepción. Te avisaremos por teléfono o correo.
+      </p>
+    </fieldset>
+  </form>
+
+  <div id="booking-success" hidden class="py-6 text-center">
+    <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+      <Icon name="check" class="h-7 w-7" />
+    </span>
+    <h3 class="mt-4 font-display text-2xl text-ink-900">Solicitud enviada</h3>
+    <p id="booking-success-text" class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-700"></p>
+    <p class="mx-auto mt-3 max-w-md text-xs leading-relaxed text-ink-500">
+      Si necesitas cambiarla, llámanos al {clinic.phoneDisplay}. Dirección: Calle Boyacá, 5, 1.º
+      Dcha, 28033 Madrid.
+    </p>
+    <a href="/" class="btn-secondary mt-6">Volver al inicio</a>
+  </div>
+</div>
+
+<script>
+  // Este script solo se carga con el componente, así que los nodos existen.
+  const form = document.querySelector<HTMLFormElement>('#booking-form')!;
+  const slotsContainer = document.querySelector<HTMLDivElement>('#slots')!;
+  const statusEl = document.querySelector<HTMLParagraphElement>('#slots-status')!;
+  const dateInput = document.querySelector<HTMLInputElement>('#date')!;
+  const timeInput = document.querySelector<HTMLInputElement>('#time')!;
+  const submitButton = document.querySelector<HTMLButtonElement>('#booking-submit')!;
+  const submitLabel = document.querySelector<HTMLSpanElement>('#booking-submit-label')!;
+  const messageEl = document.querySelector<HTMLParagraphElement>('#booking-message')!;
+  const successPanel = document.querySelector<HTMLDivElement>('#booking-success')!;
+  const successText = document.querySelector<HTMLParagraphElement>('#booking-success-text')!;
+
+  if (
+    form &&
+    slotsContainer &&
+    statusEl &&
+    dateInput &&
+    timeInput &&
+    submitButton &&
+    submitLabel &&
+    messageEl &&
+    successPanel &&
+    successText
+  ) {
+    const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
+    const horizonDays = Number(form.dataset.horizonDays ?? '60');
+    const maxDate = new Date(`${today}T12:00:00Z`);
+    maxDate.setUTCDate(maxDate.getUTCDate() + horizonDays);
+
+    dateInput.min = today;
+    dateInput.max = maxDate.toISOString().slice(0, 10);
+
+    const preselected = new URLSearchParams(window.location.search).get('tratamiento');
+    if (preselected) {
+      const radio = form.querySelector<HTMLInputElement>(
+        `input[name="treatment"][value="${CSS.escape(preselected)}"]`,
+      );
+      if (radio) radio.checked = true;
+    }
+
+    const selectedTreatment = () =>
+      form.querySelector<HTMLInputElement>('input[name="treatment"]:checked');
+
+    function clearSlots() {
+      slotsContainer.innerHTML = '';
+      timeInput.value = '';
+      submitButton.disabled = true;
+    }
+
+    function addGroup(title: string, times: string[]) {
+      if (times.length === 0) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'mt-3 first:mt-0';
+
+      const heading = document.createElement('p');
+      heading.className = 'mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-ink-500';
+      heading.textContent = title;
+      wrapper.appendChild(heading);
+
+      const grid = document.createElement('div');
+      grid.className = 'grid grid-cols-3 gap-2 sm:grid-cols-5';
+
+      for (const time of times) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = time;
+        button.dataset.time = time;
+        button.className =
+          'rounded-xl border border-brand-900/15 bg-white px-2 py-2.5 text-sm font-medium text-ink-900 transition-colors hover:border-brand-700 hover:bg-brand-50 aria-pressed:border-brand-700 aria-pressed:bg-brand-700 aria-pressed:text-white';
+        button.addEventListener('click', () => {
+          timeInput.value = time;
+          submitButton.disabled = false;
+          messageEl.textContent = '';
+          slotsContainer.querySelectorAll('button').forEach((item) => {
+            item.setAttribute('aria-pressed', String(item === button));
+          });
+        });
+        grid.appendChild(button);
+      }
+
+      wrapper.appendChild(grid);
+      slotsContainer.appendChild(wrapper);
+    }
+
+    async function loadSlots() {
+      const treatment = selectedTreatment();
+      const date = dateInput.value;
+
+      clearSlots();
+      slotsContainer.innerHTML = '';
+
+      if (!treatment || !date) {
+        statusEl.textContent = 'Elige tratamiento y fecha para ver las horas disponibles.';
+        return;
+      }
+
+      statusEl.textContent = 'Buscando huecos disponibles…';
+
+      try {
+        const response = await fetch(
+          `/api/booking?date=${encodeURIComponent(date)}&treatment=${encodeURIComponent(treatment.value)}`,
+          { headers: { accept: 'application/json' } },
+        );
+        const data = (await response.json()) as {
+          slots?: string[];
+          duration?: number;
+          error?: string;
+          closed?: boolean;
+        };
+
+        if (!response.ok) {
+          statusEl.textContent = data.error ?? 'No hemos podido consultar la disponibilidad.';
+          return;
+        }
+
+        const slots = data.slots ?? [];
+        if (slots.length === 0) {
+          statusEl.textContent = data.closed
+            ? 'Ese día la clínica está cerrada. Prueba con otro día de lunes a viernes.'
+            : 'No quedan huecos para ese día. Prueba con otra fecha o llámanos al 913 82 08 64.';
+          return;
+        }
+
+        const morning = slots.filter((slot) => slot < '14:00');
+        const afternoon = slots.filter((slot) => slot >= '14:00');
+        addGroup('Mañana', morning);
+        addGroup('Tarde', afternoon);
+
+        statusEl.textContent = `${slots.length} ${
+          slots.length === 1 ? 'hora disponible' : 'horas disponibles'
+        } para una cita de ${data.duration ?? ''} minutos.`;
+      } catch {
+        statusEl.textContent =
+          'No hemos podido consultar la disponibilidad. Inténtalo de nuevo o llámanos al 913 82 08 64.';
+      }
+    }
+
+    form.querySelectorAll('input[name="treatment"]').forEach((input) => {
+      input.addEventListener('change', loadSlots);
+    });
+    dateInput.addEventListener('change', loadSlots);
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      messageEl.textContent = '';
+
+      if (!timeInput.value) {
+        messageEl.textContent = 'Elige una hora disponible antes de enviar la solicitud.';
+        return;
+      }
+
+      const payload = Object.fromEntries(new FormData(form).entries());
+      if (!payload.consent) {
+        messageEl.textContent = 'Necesitamos tu consentimiento para gestionar la cita.';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitLabel.textContent = 'Enviando…';
+
+      try {
+        const response = await fetch('/api/booking', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = (await response.json()) as {
+          ok?: boolean;
+          error?: string;
+          summary?: string;
+        };
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.error ?? 'No se pudo enviar la solicitud de cita.');
+        }
+
+        form.hidden = true;
+        successPanel.hidden = false;
+        successText.textContent = result.summary ?? 'Te esperamos en la clínica.';
+      } catch (error) {
+        messageEl.textContent =
+          error instanceof Error
+            ? error.message
+            : 'No se pudo enviar la solicitud. Llámanos al 913 82 08 64.';
+        submitButton.disabled = false;
+        submitLabel.textContent = 'Solicitar cita';
+      }
+    });
+
+    if (selectedTreatment()) {
+      loadSlots();
+    }
+  }
+</script>

@@ -1,0 +1,12 @@
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+  sharp: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@astrojs/cloudflare@14.4.9'
+  - '@astrojs/runtime@0.1.2'
+  - astro@7.4.13
+  # pnpm-workspace.yaml
+overrides:
+    better-sqlite3: "^12.10.0"

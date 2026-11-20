@@ -1,0 +1,292 @@
+- generic [active] [ref=f2e1]:
+  - link "Saltar al contenido" [ref=f2e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - generic [ref=f2e4]:
+    - paragraph [ref=f2e5]:
+      - generic [ref=f2e9]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+    - generic [ref=f2e10]:
+      - generic [ref=f2e11]: 4,6 ★ · 57 reseñas en Google
+      - link "913 82 08 64" [ref=f2e15] [cursor=pointer]:
+        - /url: tel:+34913820864
+  - banner [ref=f2e18]:
+    - generic [ref=f2e19]:
+      - link "Clínica Dental Hortaleza — inicio" [ref=f2e20] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f2e24]:
+          - generic [ref=f2e25]: Clínica dental
+          - generic [ref=f2e26]: Hortaleza
+      - navigation "Navegación principal" [ref=f2e27]:
+        - link "Tratamientos" [ref=f2e28] [cursor=pointer]:
+          - /url: /tratamientos
+        - link "La clínica" [ref=f2e29] [cursor=pointer]:
+          - /url: /clinica
+        - link "Equipo" [ref=f2e30] [cursor=pointer]:
+          - /url: /equipo
+        - link "Blog" [ref=f2e31] [cursor=pointer]:
+          - /url: /blog
+        - link "Contacto" [ref=f2e32] [cursor=pointer]:
+          - /url: /contacto
+      - link "Pedir cita" [ref=f2e34] [cursor=pointer]:
+        - /url: /pedir-cita
+  - main [ref=f2e38]:
+    - generic [ref=f2e40]:
+      - generic [ref=f2e41]:
+        - paragraph [ref=f2e42]: Clínica dental en Hortaleza · 28033
+        - heading "Odontología tranquila en el barrio de Hortaleza" [level=1] [ref=f2e43]
+        - paragraph [ref=f2e44]: Implantes, ortodoncia, endodoncias, prótesis y estética dental en Calle Boyacá, 5. Diagnóstico digital con radiografía panorámica y escáner intraoral, sin moldes tradicionales.
+        - paragraph [ref=f2e45]: «Tu sonrisa es nuestra prioridad»
+        - generic [ref=f2e46]:
+          - link "Pedir cita online" [ref=f2e47] [cursor=pointer]:
+            - /url: /pedir-cita
+          - link "913 82 08 64" [ref=f2e51] [cursor=pointer]:
+            - /url: tel:+34913820864
+        - generic [ref=f2e54]:
+          - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f2e55] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+            - generic [ref=f2e79]: 4,6
+            - generic [ref=f2e80]: 57 reseñas en Google
+          - paragraph [ref=f2e81]: Abrimos a las 9:30
+          - paragraph [ref=f2e85]: Presupuesto por escrito
+      - generic [ref=f2e89]:
+        - img "Recepción de la Clínica Dental Hortaleza, en Calle Boyacá 5" [ref=f2e91]
+        - generic [ref=f2e92]:
+          - paragraph [ref=f2e93]: Sin moldes tradicionales
+          - paragraph [ref=f2e96]: Escáner intraoral y radiografía panorámica en la misma cita de diagnóstico.
+    - region "Todo lo que tu boca necesita, en una sola clínica" [ref=f2e97]:
+      - generic [ref=f2e98]:
+        - generic [ref=f2e99]:
+          - paragraph [ref=f2e100]: Tratamientos
+          - heading "Todo lo que tu boca necesita, en una sola clínica" [level=2] [ref=f2e101]
+          - paragraph [ref=f2e102]: Trabajamos con un plan de tratamiento claro y un presupuesto por escrito. Elige el tratamiento que te interesa y te contamos cómo lo abordamos.
+        - generic [ref=f2e103]:
+          - link [ref=f2e104] [cursor=pointer]:
+            - /url: /tratamientos/implantes
+            - generic [ref=f2e105]:
+              - heading "Implantes dentales" [level=3] [ref=f2e109]
+              - paragraph [ref=f2e110]: Reponemos las piezas perdidas con implantes de titanio que se integran en el hueso y quedan fijos, sin pegamentos ni adhesivos.
+            - generic [ref=f2e111]:
+              - generic [ref=f2e112]: Ver tratamiento
+              - generic [ref=f2e115]: 90 min
+          - link [ref=f2e119] [cursor=pointer]:
+            - /url: /tratamientos/estetica-dental
+            - generic [ref=f2e120]:
+              - heading "Estética dental" [level=3] [ref=f2e125]
+              - paragraph [ref=f2e126]: Blanqueamiento en una sola sesión, carillas y rehabilitación estética para corregir color, forma y pequeños espacios entre los dientes.
+            - generic [ref=f2e127]:
+              - generic [ref=f2e128]: Ver tratamiento
+              - generic [ref=f2e131]: 60 min
+          - link [ref=f2e135] [cursor=pointer]:
+            - /url: /tratamientos/endodoncias
+            - generic [ref=f2e136]:
+              - heading "Endodoncias" [level=3] [ref=f2e140]
+              - paragraph [ref=f2e141]: Eliminamos el tejido infectado, limpiamos y sellamos los conductos de la raíz para conservar el diente y evitar la extracción.
+            - generic [ref=f2e142]:
+              - generic [ref=f2e143]: Ver tratamiento
+              - generic [ref=f2e146]: 90 min
+          - link [ref=f2e150] [cursor=pointer]:
+            - /url: /tratamientos/protesis
+            - generic [ref=f2e151]:
+              - heading "Prótesis dental" [level=3] [ref=f2e155]
+              - paragraph [ref=f2e156]: Prótesis fija y removible, incrustaciones cerámicas y férulas de descarga para devolver función y proteger el desgaste.
+            - generic [ref=f2e157]:
+              - generic [ref=f2e158]: Ver tratamiento
+              - generic [ref=f2e161]: 45 min
+          - link [ref=f2e165] [cursor=pointer]:
+            - /url: /tratamientos/ortodoncia
+            - generic [ref=f2e166]:
+              - heading "Ortodoncia" [level=3] [ref=f2e171]
+              - paragraph [ref=f2e172]: Corregimos la posición de los dientes y la mordida con brackets o alineadores, tras un estudio personalizado de 30 minutos.
+            - generic [ref=f2e173]:
+              - generic [ref=f2e174]: Ver tratamiento
+              - generic [ref=f2e177]: 30 min
+          - link [ref=f2e181] [cursor=pointer]:
+            - /url: /tratamientos/diagnostico-digital
+            - generic [ref=f2e182]:
+              - heading "Diagnóstico digital" [level=3] [ref=f2e186]
+              - paragraph [ref=f2e187]: "Diagnóstico con radiografía panorámica y escáner intraoral: imágenes en el momento y tratamientos planificados sin moldes de alginato."
+            - generic [ref=f2e188]:
+              - generic [ref=f2e189]: Ver tratamiento
+              - generic [ref=f2e192]: 30 min
+        - generic [ref=f2e196]:
+          - link "Ver todos los tratamientos" [ref=f2e197] [cursor=pointer]:
+            - /url: /tratamientos
+          - generic [ref=f2e200]: ¿No sabes qué necesitas? Empieza por una revisión.
+    - region "Diagnosticar bien es la mitad del tratamiento" [ref=f2e201]:
+      - generic [ref=f2e202]:
+        - generic [ref=f2e203]:
+          - paragraph [ref=f2e204]: Tecnología
+          - heading "Diagnosticar bien es la mitad del tratamiento" [level=2] [ref=f2e205]
+          - paragraph [ref=f2e206]: Antes de proponer nada vemos lo que no se ve a simple vista. En la misma cita de diagnóstico obtenemos las imágenes y las revisamos contigo en pantalla, señalando qué ocurre y qué opciones hay.
+          - list [ref=f2e207]:
+            - listitem [ref=f2e208]:
+              - generic [ref=f2e212]:
+                - heading "Escáner intraoral" [level=3] [ref=f2e213]
+                - paragraph [ref=f2e214]: "Sustituye a los moldes de alginato: capturamos la forma de tus dientes en 3D, con más precisión y sin reflejo nauseoso."
+            - listitem [ref=f2e215]:
+              - generic [ref=f2e219]:
+                - heading "Radiografía panorámica" [level=3] [ref=f2e220]
+                - paragraph [ref=f2e221]: Una imagen de los dos maxilares para valorar hueso, raíces y muelas del juicio con una dosis muy baja.
+          - link "Cómo es la cita de diagnóstico" [ref=f2e222] [cursor=pointer]:
+            - /url: /tratamientos/diagnostico-digital
+        - generic [ref=f2e225]:
+          - img "Sala de tratamiento de la Clínica Dental Hortaleza" [ref=f2e227]
+          - img "Gabinete de la Clínica Dental Hortaleza" [ref=f2e229]
+    - region "Cerca de casa, sin prisas y con todo explicado" [ref=f2e230]:
+      - generic [ref=f2e231]:
+        - generic [ref=f2e232]:
+          - paragraph [ref=f2e233]: Por qué la clínica
+          - heading "Cerca de casa, sin prisas y con todo explicado" [level=2] [ref=f2e234]
+          - list [ref=f2e235]:
+            - listitem [ref=f2e236]:
+              - generic [ref=f2e241]:
+                - heading "En el barrio de Hortaleza" [level=3] [ref=f2e242]
+                - paragraph [ref=f2e243]: Calle Boyacá, 5, 1.º Dcha (28033). Un punto de referencia para las familias del barrio y de los distritos cercanos.
+            - listitem [ref=f2e244]:
+              - generic [ref=f2e248]:
+                - heading "Diagnóstico digital en la misma cita" [level=3] [ref=f2e249]
+                - paragraph [ref=f2e250]: Radiografía panorámica y escáner intraoral para ver el problema y planificar el tratamiento sin moldes.
+            - listitem [ref=f2e251]:
+              - generic [ref=f2e256]:
+                - heading "Presupuesto por escrito antes de empezar" [level=3] [ref=f2e257]
+                - paragraph [ref=f2e258]: Te contamos fases, materiales y alternativas. Decides con la información delante, sin compromiso.
+          - generic [ref=f2e259]:
+            - link "Pedir cita" [ref=f2e260] [cursor=pointer]:
+              - /url: /pedir-cita
+            - link "Conocer la clínica" [ref=f2e264] [cursor=pointer]:
+              - /url: /clinica
+        - generic [ref=f2e267]:
+          - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f2e268] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+            - generic [ref=f2e292]: 4,6
+            - generic [ref=f2e293]: 57 reseñas en Google
+          - paragraph [ref=f2e294]: «Tu sonrisa es nuestra prioridad»
+          - paragraph [ref=f2e295]: "La valoración de Google es la suma de la experiencia de nuestros pacientes en el barrio. Si ya nos has visitado, puedes dejar tu opinión en Google: nos ayuda a seguir mejorando."
+          - generic [ref=f2e296]:
+            - generic [ref=f2e297]:
+              - term [ref=f2e298]: Reseñas
+              - definition [ref=f2e299]: "57"
+            - generic [ref=f2e300]:
+              - term [ref=f2e301]: Valoración media
+              - definition [ref=f2e302]: 4,6 / 5
+    - region "Antes de tu primera visita" [ref=f2e303]:
+      - generic [ref=f2e304]:
+        - generic [ref=f2e305]:
+          - paragraph [ref=f2e306]: Preguntas frecuentes
+          - heading "Antes de tu primera visita" [level=2] [ref=f2e307]
+          - paragraph [ref=f2e308]: Si tu duda no está aquí, llámanos al 913 82 08 64 y te la resolvemos sin compromiso.
+        - generic [ref=f2e309]:
+          - group [ref=f2e310]:
+            - generic "¿Dónde está la Clínica Dental Hortaleza?" [ref=f2e311] [cursor=pointer]:
+              - text: ¿Dónde está la Clínica Dental Hortaleza?
+              - generic [aria-hidden] [ref=f2e312]: +
+          - group [ref=f2e313]:
+            - generic "¿Cómo puedo pedir cita?" [ref=f2e314] [cursor=pointer]:
+              - text: ¿Cómo puedo pedir cita?
+              - generic [aria-hidden] [ref=f2e315]: +
+          - group [ref=f2e316]:
+            - generic "¿Cuánto dura la primera visita?" [ref=f2e317] [cursor=pointer]:
+              - text: ¿Cuánto dura la primera visita?
+              - generic [aria-hidden] [ref=f2e318]: +
+          - group [ref=f2e319]:
+            - generic "¿Qué tecnología utilizáis para el diagnóstico?" [ref=f2e320] [cursor=pointer]:
+              - text: ¿Qué tecnología utilizáis para el diagnóstico?
+              - generic [aria-hidden] [ref=f2e321]: +
+    - region "Calle Boyacá, 5 · Hortaleza" [ref=f2e322]:
+      - generic [ref=f2e323]:
+        - generic [ref=f2e324]:
+          - paragraph [ref=f2e325]: Dónde estamos
+          - heading "Calle Boyacá, 5 · Hortaleza" [level=2] [ref=f2e326]
+          - generic [ref=f2e327]:
+            - paragraph [ref=f2e328]: Clínica Dental Hortaleza
+            - paragraph [ref=f2e329]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+            - paragraph [ref=f2e330]: Hortaleza, Madrid
+          - generic [ref=f2e332]:
+            - term [ref=f2e333]: Lunes a viernes
+            - definition [ref=f2e334]: 09:30 – 14:00 · 16:00 – 20:00
+          - paragraph [ref=f2e335]: Abrimos a las 9:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 y te la confirmamos.
+          - generic [ref=f2e336]:
+            - link "913 82 08 64" [ref=f2e337] [cursor=pointer]:
+              - /url: tel:+34913820864
+            - link "Contacto y horarios" [ref=f2e340] [cursor=pointer]:
+              - /url: /contacto
+        - generic [ref=f2e342]:
+          - paragraph [ref=f2e347]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 Madrid
+          - paragraph [ref=f2e348]: El mapa se carga solo si lo necesitas, para no enviar datos a terceros al abrir la página.
+          - button "Cargar mapa" [ref=f2e349]
+        - paragraph [ref=f2e350]:
+          - link "Cómo llegar en Google Maps" [ref=f2e351] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/?api=1&destination=Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2C%2028033%20Madrid
+    - generic [ref=f2e357]:
+      - generic [ref=f2e358]:
+        - heading "Pide tu cita y salimos de dudas" [level=2] [ref=f2e359]
+        - paragraph [ref=f2e360]: Elige tratamiento, día y hora. Te confirmamos por teléfono o correo. Si lo prefieres, llámanos al 913 82 08 64.
+      - generic [ref=f2e361]:
+        - link "Pedir cita online" [ref=f2e362] [cursor=pointer]:
+          - /url: /pedir-cita
+        - link "913 82 08 64" [ref=f2e366] [cursor=pointer]:
+          - /url: tel:+34913820864
+  - contentinfo [ref=f2e369]:
+    - generic [ref=f2e370]:
+      - generic [ref=f2e371]:
+        - link "Clínica Dental Hortaleza — inicio" [ref=f2e372] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f2e376]:
+            - generic [ref=f2e377]: Clínica dental
+            - generic [ref=f2e378]: Hortaleza
+        - paragraph [ref=f2e379]: Tu sonrisa es nuestra prioridad. Odontología familiar en el barrio de Hortaleza, con diagnóstico digital y tratamientos planificados sin prisas.
+        - link "4,6 sobre 5 estrellas según 57 reseñas de Google. Abrir en Google Maps" [ref=f2e381] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Hortaleza%20Calle%20Boyac%C3%A1%2C%20n.%C2%BA%205%2C%201.%C2%BA%20Dcha%2028033%20Madrid
+          - generic [ref=f2e405]: 4,6
+          - generic [ref=f2e406]: 57 reseñas en Google
+      - generic [ref=f2e407]:
+        - heading "Contacto" [level=2] [ref=f2e408]
+        - generic [ref=f2e409]:
+          - paragraph [ref=f2e410]:
+            - generic [ref=f2e414]: Calle Boyacá, n.º 5, 1.º Dcha, 28033 MadridHortaleza, Madrid
+          - paragraph [ref=f2e415]:
+            - link "913 82 08 64" [ref=f2e418] [cursor=pointer]:
+              - /url: tel:+34913820864
+      - generic [ref=f2e419]:
+        - heading "Horario" [level=2] [ref=f2e420]
+        - generic [ref=f2e422]:
+          - term [ref=f2e423]: Lunes a viernes
+          - definition [ref=f2e424]: 09:30 – 14:00 · 16:00 – 20:00
+        - paragraph [ref=f2e425]: Abrimos a las 9:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 y te la confirmamos.
+      - generic [ref=f2e426]:
+        - heading "Enlaces" [level=2] [ref=f2e427]
+        - list [ref=f2e428]:
+          - listitem [ref=f2e429]:
+            - link "Tratamientos" [ref=f2e430] [cursor=pointer]:
+              - /url: /tratamientos
+          - listitem [ref=f2e431]:
+            - link "La clínica" [ref=f2e432] [cursor=pointer]:
+              - /url: /clinica
+          - listitem [ref=f2e433]:
+            - link "Equipo" [ref=f2e434] [cursor=pointer]:
+              - /url: /equipo
+          - listitem [ref=f2e435]:
+            - link "Blog" [ref=f2e436] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f2e437]:
+            - link "Pedir cita" [ref=f2e438] [cursor=pointer]:
+              - /url: /pedir-cita
+          - listitem [ref=f2e439]:
+            - link "Contacto" [ref=f2e440] [cursor=pointer]:
+              - /url: /contacto
+    - generic [ref=f2e442]:
+      - paragraph [ref=f2e443]: © 2026 Clínica Dental Hortaleza. Todos los derechos reservados.
+      - list [ref=f2e444]:
+        - listitem [ref=f2e445]:
+          - link "Aviso legal" [ref=f2e446] [cursor=pointer]:
+            - /url: /legal/aviso-legal
+        - listitem [ref=f2e447]:
+          - link "Privacidad" [ref=f2e448] [cursor=pointer]:
+            - /url: /legal/privacidad
+        - listitem [ref=f2e449]:
+          - link "Cookies" [ref=f2e450] [cursor=pointer]:
+            - /url: /legal/cookies
+  - generic [ref=f2e451]:
+    - link "913 82 08 64" [ref=f2e452] [cursor=pointer]:
+      - /url: tel:+34913820864
+    - link "Pedir cita" [ref=f2e455] [cursor=pointer]:
+      - /url: /pedir-cita

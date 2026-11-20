@@ -1,0 +1,91 @@
+{
+  "name": "Clínica Dental Hortaleza",
+  "slogan": "Tu sonrisa es nuestra prioridad",
+  "phoneDisplay": "913 82 08 64",
+  "phoneE164": "+34913820864",
+  "whatsapp": "+34696695884",
+  "email": null,
+  "address": {
+    "street": "Calle Boyacá, n.º 5, 1.º Dcha",
+    "postalCode": "28033",
+    "city": "Madrid",
+    "district": "Hortaleza",
+    "region": "Comunidad de Madrid",
+    "country": "ES"
+  },
+  "geo": {
+    "latitude": 40.4686,
+    "longitude": -3.6395
+  },
+  "rating": {
+    "value": 4.6,
+    "count": 57,
+    "source": "Google"
+  },
+  "hoursNote": "Lunes a jueves de 09:30 a 14:00 y 16:00 a 20:00. Viernes solo de 09:30 a 14:00. Si necesitas una hora concreta, llámanos al 913 82 08 64 o escríbenos al 696695884 y te la confirmamos.",
+  "openingHours": [
+    {
+      "days": [1, 2, 3, 4],
+      "ranges": [
+        ["09:30", "14:00"],
+        ["16:00", "20:00"]
+      ]
+    },
+    {
+      "days": [5],
+      "ranges": [
+        ["09:30", "14:00"]
+      ]
+    }
+  ],
+  "booking": {
+    "timezone": "Europe/Madrid",
+    "slotStepMinutes": 15,
+    "leadTimeHours": 4,
+    "horizonDays": 60,
+    "treatments": [
+      {
+        "slug": "primera-visita",
+        "name": "Primera visita y revisión",
+        "short": "Diagnóstico, revisión y plan de tratamiento",
+        "duration": 30
+      },
+      {
+        "slug": "diagnostico-digital",
+        "name": "Radiografía panorámica o escáner intraoral",
+        "short": "Diagnóstico digital sin moldes",
+        "duration": 30
+      },
+      {
+        "slug": "ortodoncia",
+        "name": "Ortodoncia: estudio o revisión",
+        "short": "Valoración de tu caso y opciones de tratamiento",
+        "duration": 30
+      },
+      {
+        "slug": "protesis",
+        "name": "Prótesis: toma de medidas o prueba",
+        "short": "Prótesis fija, removible y férulas de descarga",
+        "duration": 45
+      },
+      {
+        "slug": "estetica-dental",
+        "name": "Estética dental: blanqueamiento o carillas",
+        "short": "Blanqueamiento, carillas y rehabilitación estética",
+        "duration": 60
+      },
+      {
+        "slug": "endodoncias",
+        "name": "Endodoncia",
+        "short": "Tratamiento de conductos para conservar el diente",
+        "duration": 90
+      },
+      {
+        "slug": "implantes",
+        "name": "Implantes dentales: valoración o cirugía",
+        "short": "Reposición de piezas perdidas con implantes de titanio",
+        "duration": 90
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+---
+import { addressLine, clinic } from '../../data/clinic';
+import Icon from './Icon.astro';
+
+const destination = encodeURIComponent(
+  `${clinic.address.street}, ${clinic.address.postalCode} ${clinic.address.city}, ${clinic.address.district}`
+);
+---
+
+<div class="overflow-hidden rounded-3xl border border-brand-900/10 bg-brand-50">
+  <div id="map-placeholder" class="flex aspect-[16/10] flex-col items-center justify-center gap-3 p-8 text-center">
+    <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-700">
+      <Icon name="map-pin" class="h-6 w-6" />
+    </span>
+    <p class="font-display text-xl text-ink-900">{addressLine}</p>
+    <p class="max-w-sm text-sm leading-relaxed text-ink-500">
+      El mapa se carga solo si lo necesitas, para no enviar datos a terceros al abrir la página.
+    </p>
+    <button id="map-load" type="button" class="btn-secondary mt-1">
+      Cargar mapa
+    </button>
+  </div>
+  <div id="map-embed" class="hidden aspect-[16/10]"></div>
+</div>
+
+<p class="mt-3 text-sm">
+  <a
+    href={`https://www.google.com/maps/dir/?api=1&destination=${destination}`}
+    class="inline-flex items-center gap-2 font-semibold text-brand-700 no-underline hover:underline"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Icon name="arrow-right" class="h-4 w-4" />
+    Cómo llegar en Google Maps
+  </a>
+</p>
+
+<script>
+  const button = document.getElementById('map-load');
+  const holder = document.getElementById('map-embed');
+  const placeholder = document.getElementById('map-placeholder');
+
+  button?.addEventListener('click', () => {
+    if (!holder) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src =
+      'https://www.openstreetmap.org/export/embed.html?bbox=-3.6486%2C40.4642%2C-3.6304%2C40.4730&layer=mapnik&marker=40.4686%2C-3.6395';
+    iframe.title = 'Mapa de la Clínica Dental Hortaleza, Calle Boyacá 5, Madrid';
+    iframe.className = 'h-full w-full border-0';
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+
+    holder.appendChild(iframe);
+    holder.classList.remove('hidden');
+    placeholder?.classList.add('hidden');
+  });
+</script>

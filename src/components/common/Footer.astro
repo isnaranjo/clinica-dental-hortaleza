@@ -1,0 +1,98 @@
+---
+import { addressLine, clinic, telHref } from '../../data/clinic';
+import { openingHoursLines } from '../../lib/format';
+import Icon from './Icon.astro';
+import GoogleReviewsBadge from './GoogleReviewsBadge.astro';
+
+const hours = openingHoursLines();
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-brand-900/10 bg-white pb-28 sm:pb-0">
+  <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="/" class="flex items-center gap-3 no-underline" aria-label={`${clinic.name} — inicio`}>
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-700 text-white">
+          <Icon name="tooth" class="h-6 w-6" />
+        </span>
+        <span class="leading-tight">
+          <span class="block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-brand-700">
+            Clínica dental
+          </span>
+          <span class="block font-display text-lg font-semibold text-ink-900">Hortaleza</span>
+        </span>
+      </a>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-500">
+        {clinic.slogan}. Odontología familiar en el barrio de Hortaleza, con diagnóstico digital y
+        tratamientos planificados sin prisas.
+      </p>
+      <div class="mt-5">
+        <GoogleReviewsBadge />
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-brand-800">Contacto</h2>
+      <address class="mt-4 space-y-3 text-sm not-italic text-ink-700">
+        <p class="flex items-start gap-2.5">
+          <Icon name="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+          <span>{addressLine}<br />{clinic.address.district}, Madrid</span>
+        </p>
+        <p class="flex items-center gap-2.5">
+          <Icon name="phone" class="h-4 w-4 shrink-0 text-brand-600" />
+          <a href={telHref} class="font-semibold text-brand-800 no-underline hover:underline">
+            {clinic.phoneDisplay}
+          </a>
+        </p>
+        {
+          clinic.email && (
+            <p class="flex items-center gap-2.5">
+              <Icon name="mail" class="h-4 w-4 shrink-0 text-brand-600" />
+              <a href={`mailto:${clinic.email}`} class="text-brand-800 no-underline hover:underline">
+                {clinic.email}
+              </a>
+            </p>
+          )
+        }
+      </address>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-brand-800">Horario</h2>
+      <dl class="mt-4 space-y-2 text-sm text-ink-700">
+        {
+          hours.map((line) => (
+            <div>
+              <dt class="font-medium text-ink-900">{line.days}</dt>
+              <dd class="text-ink-500">{line.hours}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="mt-4 text-xs leading-relaxed text-ink-500">{clinic.hoursNote}</p>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-brand-800">Enlaces</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href="/tratamientos" class="text-ink-700 no-underline hover:text-brand-800">Tratamientos</a></li>
+        <li><a href="/clinica" class="text-ink-700 no-underline hover:text-brand-800">La clínica</a></li>
+        <li><a href="/equipo" class="text-ink-700 no-underline hover:text-brand-800">Equipo</a></li>
+        <li><a href="/blog" class="text-ink-700 no-underline hover:text-brand-800">Blog</a></li>
+        <li><a href="/pedir-cita" class="text-ink-700 no-underline hover:text-brand-800">Pedir cita</a></li>
+        <li><a href="/contacto" class="text-ink-700 no-underline hover:text-brand-800">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-brand-900/10">
+    <div class="container-page flex flex-col gap-3 py-6 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {clinic.name}. Todos los derechos reservados.</p>
+      <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        <li><a href="/legal/aviso-legal" class="no-underline hover:text-brand-800">Aviso legal</a></li>
+        <li><a href="/legal/privacidad" class="no-underline hover:text-brand-800">Privacidad</a></li>
+        <li><a href="/legal/cookies" class="no-underline hover:text-brand-800">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,130 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Picture from '../../components/common/Picture.astro';
+import Icon from '../../components/common/Icon.astro';
+import { clinic, siteUrl, telHref } from '../../data/clinic';
+import { formatDate } from '../../lib/format';
+import { breadcrumbSchema } from '../../lib/schema-markup';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const data = post.data;
+const path = `/blog/${post.id}/`;
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    { name: data.title, path },
+  ]),
+  {
+    '@type': 'BlogPosting',
+    headline: data.title,
+    description: data.description,
+    datePublished: data.pubDate.toISOString(),
+    dateModified: (data.updatedDate ?? data.pubDate).toISOString(),
+    inLanguage: 'es-ES',
+    mainEntityOfPage: new URL(path, siteUrl).href,
+    author: { '@type': 'Organization', name: clinic.name, '@id': `${siteUrl}/#clinica` },
+    publisher: { '@id': `${siteUrl}/#clinica` },
+    image: data.image ? new URL(data.image, siteUrl).href : undefined,
+  },
+];
+---
+
+<BaseLayout
+  title={`${data.title} | Clínica Dental Hortaleza`}
+  description={data.description}
+  image={data.image}
+  ogType="article"
+  extraSchema={extraSchema}
+>
+  <article>
+    <header class="border-b border-brand-900/10 bg-cream-100/60">
+      <div class="container-page max-w-3xl py-12 sm:py-14">
+        <nav aria-label="Migas de pan" class="text-xs text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="/" class="no-underline hover:text-brand-800">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="/blog" class="no-underline hover:text-brand-800">Blog</a></li>
+          </ol>
+        </nav>
+
+        <h1 class="mt-5 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+          {data.title}
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-ink-700">{data.description}</p>
+        <p class="mt-5 text-xs text-ink-500">
+          <time datetime={data.pubDate.toISOString()}>{formatDate(data.pubDate)}</time>
+          {' · '}
+          {data.readingMinutes} min de lectura
+          {' · '}
+          {clinic.name}
+        </p>
+      </div>
+    </header>
+
+    {
+      data.image && (
+        <div class="container-page max-w-3xl pt-8">
+          <div class="overflow-hidden rounded-3xl border border-brand-900/10">
+            <Picture
+              src={data.image}
+              alt={data.imageAlt ?? ''}
+              class="h-72 w-full object-cover sm:h-80"
+              priority
+              sizes="(min-width: 768px) 768px, 100vw"
+            />
+          </div>
+        </div>
+      )
+    }
+
+    <div class="container-page max-w-3xl py-10">
+      <div class="prose-clinic">
+        <Content />
+      </div>
+
+      <div class="mt-12 rounded-3xl border border-brand-900/10 bg-white p-6">
+        <h2 class="font-display text-xl text-ink-900">¿Te surge la misma duda en tu caso?</h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-500">
+          Cada boca es distinta. Si quieres una respuesta aplicada a la tuya, pide una revisión en
+          la clínica: estamos en Calle Boyacá, 5 (28033 Madrid).
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="/pedir-cita" class="btn-primary">
+            <Icon name="calendar" class="h-4 w-4" />
+            Pedir cita
+          </a>
+          <a href={telHref} class="btn-secondary">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+        </div>
+      </div>
+
+      <p class="mt-8 text-xs leading-relaxed text-ink-500">
+        Este artículo es información general y no sustituye una valoración clínica presencial.
+      </p>
+
+      <a href="/blog" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 no-underline hover:underline">
+        <Icon name="arrow-right" class="h-4 w-4 rotate-180" />
+        Volver al blog
+      </a>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,329 @@
+{
+  "generatedAt": "2026-11-12T07:34:32.474Z",
+  "images": [
+    {
+      "src": "/assets/img/clinica-cartel.webp",
+      "width": 1800,
+      "height": 1005,
+      "source": "fotos clinica/cartelRetocado.png"
+    },
+    {
+      "src": "/assets/img/clinica-recepcion.webp",
+      "width": 1800,
+      "height": 1005,
+      "source": "fotos clinica/recepcinRetocada.png"
+    },
+    {
+      "src": "/assets/img/clinica-sala-morada.webp",
+      "width": 1800,
+      "height": 1005,
+      "source": "fotos clinica/salaMoradaRetocada.png"
+    },
+    {
+      "src": "/assets/img/clinica-sala-verde.webp",
+      "width": 1800,
+      "height": 1005,
+      "source": "fotos clinica/salaVerdeRetocada.png"
+    },
+    {
+      "src": "/assets/img/tratamientos/angulo-1-1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/angulo/1 (1).JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/angulo-1-2.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/angulo/1 (2).JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/angulo-1-3.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/angulo/1 (3).JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/blanqueamiento-1.webp",
+      "width": 1200,
+      "height": 547,
+      "source": "tratamientos/Blanqueamiento/1.png"
+    },
+    {
+      "src": "/assets/img/tratamientos/blanqueamiento-2.webp",
+      "width": 1200,
+      "height": 723,
+      "source": "tratamientos/Blanqueamiento/2.png"
+    },
+    {
+      "src": "/assets/img/tratamientos/carillas-imagen-021.webp",
+      "width": 1200,
+      "height": 900,
+      "source": "tratamientos/Carillas/Imagen 021.jpg"
+    },
+    {
+      "src": "/assets/img/tratamientos/carillas-imagen-023.webp",
+      "width": 1200,
+      "height": 900,
+      "source": "tratamientos/Carillas/Imagen 023.jpg"
+    },
+    {
+      "src": "/assets/img/tratamientos/endodoncias-endodoncia-incisivos.webp",
+      "width": 1148,
+      "height": 2040,
+      "source": "tratamientos/Endodoncias/ENDODONCIA INCISIVOS.jpeg"
+    },
+    {
+      "src": "/assets/img/tratamientos/endodoncias-endodoncia-molar.webp",
+      "width": 1148,
+      "height": 2040,
+      "source": "tratamientos/Endodoncias/ENDODONCIA MOLAR.jpeg"
+    },
+    {
+      "src": "/assets/img/tratamientos/ferula-img-20180510-wa0004.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/ferula/IMG-20180510-WA0004.jpg"
+    },
+    {
+      "src": "/assets/img/tratamientos/ferula-img-20180510-wa0005.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/ferula/IMG-20180510-WA0005.jpg"
+    },
+    {
+      "src": "/assets/img/tratamientos/ferula-img-20180510-wa0006.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/ferula/IMG-20180510-WA0006.jpg"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-1.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implante unitario/1.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-2.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implante unitario/2..JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-3.webp",
+      "width": 1200,
+      "height": 900,
+      "source": "tratamientos/Implantes/Implante unitario/3.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-4.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implante unitario/4.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-5.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implante unitario/5.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implante-unitario-6.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implante unitario/6.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-1.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/1.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-2.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/2.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-3.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/3.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-4.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/4.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-5.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/5.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-6.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/6.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-implantes-con-protesis-removible-7.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Implantes con protesis removible/7.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-1.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/1.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-2.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/2.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-3.webp",
+      "width": 1200,
+      "height": 1200,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/3.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-4.webp",
+      "width": 1200,
+      "height": 1200,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/4.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-5.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/5.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/implantes-protesis-fija-sobre-implantes-6.webp",
+      "width": 1200,
+      "height": 1600,
+      "source": "tratamientos/Implantes/Prótesis fija sobre implantes/6.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/incrustacion-img-0756.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Incrustacion/IMG_0756.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/incrustacion-img-0758.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Incrustacion/IMG_0758.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/incrustacion-img-0760.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Incrustacion/IMG_0760.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/incrustacion-img-0836.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Incrustacion/IMG_0836.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/incrustacion-img-0843.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Incrustacion/IMG_0843.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/odontologia-conversadora-empaste-2-jpg.webp",
+      "width": 640,
+      "height": 480,
+      "source": "tratamientos/Odontologia Conversadora/EMPASTE 2.jpg.jpeg"
+    },
+    {
+      "src": "/assets/img/tratamientos/odontologia-conversadora-empaste-jpg.webp",
+      "width": 640,
+      "height": 480,
+      "source": "tratamientos/Odontologia Conversadora/EMPASTE.jpg.jpeg"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-1.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/1.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-2.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/2.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-3.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/3.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-4.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/4.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-5.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/5.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-6.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/6.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/rehabilitacon-completa-7.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Rehabilitacon Completa/7.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/remplazo-de-amalgama-img-0734.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Remplazo de Amalgama/IMG_0734.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/remplazo-de-amalgama-img-0736.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Remplazo de Amalgama/IMG_0736.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/remplazo-de-amalgama-img-0740.webp",
+      "width": 1200,
+      "height": 800,
+      "source": "tratamientos/Remplazo de Amalgama/IMG_0740.JPG"
+    },
+    {
+      "src": "/assets/img/tratamientos/tratamiento-periodontal-tratamiento-periodontal-2-jpg.webp",
+      "width": 640,
+      "height": 480,
+      "source": "tratamientos/Tratamiento Periodontal/TRATAMIENTO PERIODONTAL 2.jpg.jpeg"
+    },
+    {
+      "src": "/assets/img/tratamientos/tratamiento-periodontal-tratamiento-periodontal-jpg.webp",
+      "width": 640,
+      "height": 480,
+      "source": "tratamientos/Tratamiento Periodontal/TRATAMIENTO PERIODONTAL.jpg.jpeg"
+    }
+  ]
+}

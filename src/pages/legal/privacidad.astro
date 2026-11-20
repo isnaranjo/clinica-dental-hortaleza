@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/legal/LegalPage.astro';
+import { addressLine, clinic, siteUrl, telHref } from '../../data/clinic';
+import { breadcrumbSchema } from '../../lib/schema-markup';
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Política de privacidad', path: '/legal/privacidad/' },
+  ]),
+];
+---
+
+<!-- BORRADOR: revisar con asesoría legal y completar los datos del responsable antes de publicar. -->
+<BaseLayout
+  title="Política de privacidad"
+  description="Cómo trata la Clínica Dental Hortaleza los datos personales de las solicitudes de cita y del formulario de contacto, conforme al RGPD y la LOPDGDD."
+  noindex
+  extraSchema={extraSchema}
+>
+  <LegalPage
+    title="Política de privacidad"
+    description="Documento base elaborado conforme al RGPD (UE) 2016/679 y a la LOPDGDD 3/2018. Debe completarse con los datos del responsable y revisarse antes de su publicación."
+    updated="12 de noviembre de 2026"
+  >
+    <h2>Responsable del tratamiento</h2>
+    <ul>
+      <li><strong>Responsable:</strong> {clinic.name}</li>
+      <li><strong>NIF/CIF:</strong> [pendiente de completar]</li>
+      <li><strong>Domicilio:</strong> {addressLine}, {clinic.address.district}, Madrid</li>
+      <li><strong>Teléfono:</strong> <a href={telHref}>{clinic.phoneDisplay}</a></li>
+      <li><strong>Correo para ejercer derechos:</strong> [pendiente de completar]</li>
+    </ul>
+
+    <h2>Para qué tratamos tus datos</h2>
+    <ul>
+      <li>
+        <strong>Solicitudes de cita:</strong> gestionar la reserva, confirmarla, avisarte de
+        cambios y organizar la agenda de la clínica.
+      </li>
+      <li>
+        <strong>Formulario de contacto:</strong> responder a tu consulta y, si lo pides, concertar
+        una visita.
+      </li>
+      <li>
+        <strong>Obligaciones legales:</strong> conservar la documentación clínica y atender los
+        requerimientos legalmente previstos.
+      </li>
+    </ul>
+
+    <h2>Base jurídica</h2>
+    <p>
+      El tratamiento se basa en tu consentimiento al enviar el formulario (art. 6.1.a RGPD), en la
+      ejecución de la relación asistencial solicitada (art. 6.1.b) y en el cumplimiento de
+      obligaciones legales aplicables a la actividad sanitaria (art. 6.1.c). Cuando la cita incluya
+      información sobre tu salud, el tratamiento se ampara además en el art. 9.2.a y 9.2.h del RGPD.
+    </p>
+
+    <h2>Qué datos recogemos</h2>
+    <p>
+      Nombre y apellidos, teléfono, correo electrónico, tratamiento solicitado, fecha y hora, y las
+      notas que decidas escribir. En el formulario de contacto, además, el mensaje. No solicitamos
+      datos de salud en el formulario de contacto: si necesitas comentar algo clínico, indícalo en
+      la cita.
+    </p>
+
+    <h2>Cuánto tiempo los conservamos</h2>
+    <p>
+      Los datos de las solicitudes de cita se conservan mientras la cita esté vigente y, después,
+      durante los plazos legalmente exigibles. Los mensajes de contacto se conservan el tiempo
+      necesario para atender la consulta y, como máximo, un año desde el último contacto.
+    </p>
+
+    <h2>Quién puede acceder a ellos</h2>
+    <p>
+      Solo el personal de la clínica que necesita los datos para su trabajo. Como encargados del
+      tratamiento intervienen proveedores tecnológicos:
+    </p>
+    <ul>
+      <li>
+        <strong>Cloudflare</strong>, como proveedor de alojamiento del sitio web y de la base de
+        datos de citas.
+      </li>
+      <li>
+        <strong>Resend</strong>, para el envío de los correos de confirmación al paciente y a
+        recepción.
+      </li>
+    </ul>
+    <p>
+      No se ceden datos a terceros salvo obligación legal. Si algún proveedor implica transferencia
+      internacional, se ampara en las cláusulas contractuales tipo de la Comisión Europea o en una
+      decisión de adecuación.
+    </p>
+
+    <h2>Tus derechos</h2>
+    <p>
+      Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del
+      tratamiento y portabilidad escribiendo a la dirección del responsable. También puedes retirar
+      tu consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento
+      previo.
+    </p>
+    <p>
+      Si consideras que no hemos atendido correctamente tu solicitud, puedes reclamar ante la
+      Agencia Española de Protección de Datos (AEPD), C/ Jorge Juan 6, 28001 Madrid, o a través de
+      su sede electrónica.
+    </p>
+
+    <h2>Seguridad</h2>
+    <p>
+      Aplicamos medidas técnicas y organizativas para proteger los datos: conexión cifrada,
+      control de acceso restringido y minimización de la información recogida. Los datos de salud
+      se tratan con la confidencialidad propia de la relación sanitaria.
+    </p>
+  </LegalPage>
+</BaseLayout>

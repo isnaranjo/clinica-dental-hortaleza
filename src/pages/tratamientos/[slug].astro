@@ -1,0 +1,230 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Picture from '../../components/common/Picture.astro';
+import Icon from '../../components/common/Icon.astro';
+import TreatmentCard from '../../components/treatments/TreatmentCard.astro';
+import GoogleReviewsBadge from '../../components/common/GoogleReviewsBadge.astro';
+import { addressLine, clinic, siteUrl, telHref } from '../../data/clinic';
+import { breadcrumbSchema, faqSchema, serviceSchema } from '../../lib/schema-markup';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('tratamientos');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'tratamientos'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+
+const all = (await getCollection('tratamientos')).sort((a, b) => a.data.order - b.data.order);
+const related = all
+  .filter((item) => item.id !== entry.id)
+  .sort((a, b) => {
+    const indexA = Math.abs(a.data.order - data.order);
+    const indexB = Math.abs(b.data.order - data.order);
+    return indexA - indexB;
+  })
+  .slice(0, 3);
+
+const path = `/tratamientos/${entry.id}/`;
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Tratamientos', path: '/tratamientos/' },
+    { name: data.shortTitle, path },
+  ]),
+  serviceSchema({
+    siteUrl,
+    name: data.title,
+    description: data.description,
+    path,
+  }),
+  ...(data.faqs.length > 0 ? [faqSchema(data.faqs)] : []),
+];
+---
+
+<BaseLayout
+  title={`${data.title} | Clínica Dental Hortaleza`}
+  description={data.description}
+  image={data.image}
+  extraSchema={extraSchema}
+>
+  <article>
+    <header class="border-b border-brand-900/10 bg-cream-100/60">
+      <div class="container-page py-10 sm:py-14">
+        <nav aria-label="Migas de pan" class="text-xs text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="/" class="no-underline hover:text-brand-800">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="/tratamientos" class="no-underline hover:text-brand-800">Tratamientos</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="text-ink-700">{data.shortTitle}</li>
+          </ol>
+        </nav>
+
+        <div class="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+          <div>
+            <h1 class="max-w-2xl font-display text-4xl leading-tight text-ink-900 sm:text-5xl">
+              {data.title}
+            </h1>
+            <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink-700">{data.summary}</p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 font-medium text-ink-700 ring-1 ring-brand-900/10">
+                <Icon name="clock" class="h-4 w-4 text-brand-600" />
+                Cita de {data.duration} minutos
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 font-medium text-ink-700 ring-1 ring-brand-900/10">
+                <Icon name="map-pin" class="h-4 w-4 text-brand-600" />
+                Hortaleza, 28033
+              </span>
+            </div>
+
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href={`/pedir-cita?tratamiento=${data.bookingSlug}`} class="btn-primary">
+                <Icon name="calendar" class="h-4 w-4" />
+                Pedir cita
+              </a>
+              <a href={telHref} class="btn-secondary">
+                <Icon name="phone" class="h-4 w-4" />
+                {clinic.phoneDisplay}
+              </a>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-[1.75rem] border border-brand-900/10 bg-white">
+            <Picture
+              src={data.image}
+              alt={data.imageAlt}
+              class="h-full w-full object-cover"
+              priority
+              sizes="(min-width: 1024px) 35vw, 100vw"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-page grid gap-12 py-12 lg:grid-cols-[1.45fr_1fr]">
+      <div class="prose-clinic max-w-none">
+        <Content />
+
+        {
+          data.gallery.length > 0 && (
+            <section class="not-prose mt-12" aria-labelledby="galeria-titulo">
+              <h2 id="galeria-titulo" class="font-display text-2xl text-ink-900">
+                Casos y detalle del tratamiento
+              </h2>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                {data.gallery.map((item) => (
+                  <figure class="overflow-hidden rounded-2xl border border-brand-900/10 bg-white">
+                    <Picture
+                      src={item.src}
+                      alt={item.alt}
+                      class="h-56 w-full object-cover"
+                      sizes="(min-width: 1024px) 30vw, 50vw"
+                    />
+                    {item.caption && (
+                      <figcaption class="px-4 py-3 text-xs text-ink-500">{item.caption}</figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-ink-500">
+                Imágenes clínicas cedidas por la clínica con autorización del paciente. Los
+                resultados varían en cada caso.
+              </p>
+            </section>
+          )
+        }
+
+        {
+          data.faqs.length > 0 && (
+            <section class="not-prose mt-12" aria-labelledby="faq-tratamiento">
+              <h2 id="faq-tratamiento" class="font-display text-2xl text-ink-900">
+                Preguntas frecuentes
+              </h2>
+              <div class="mt-4 divide-y divide-brand-900/10 border-y border-brand-900/10">
+                {data.faqs.map((faq) => (
+                  <details class="group py-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink-900">
+                      {faq.question}
+                      <span class="text-brand-700 transition-transform group-open:rotate-45" aria-hidden="true">
+                        +
+                      </span>
+                    </summary>
+                    <p class="mt-3 text-sm leading-relaxed text-ink-500">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="space-y-4 lg:sticky lg:top-28 lg:self-start">
+        <div class="rounded-3xl border border-brand-900/10 bg-white p-6">
+          <p class="eyebrow">Reserva</p>
+          <h2 class="mt-2 font-display text-2xl text-ink-900">Pide tu cita</h2>
+          <p class="mt-2 text-sm leading-relaxed text-ink-500">
+            Reservamos {data.duration} minutos para este tratamiento, el tiempo necesario para
+            hacerlo bien.
+          </p>
+          <a href={`/pedir-cita?tratamiento=${data.bookingSlug}`} class="btn-primary mt-5 w-full">
+            <Icon name="calendar" class="h-4 w-4" />
+            Ver huecos disponibles
+          </a>
+          <a href={telHref} class="btn-secondary mt-2 w-full">
+            <Icon name="phone" class="h-4 w-4" />
+            {clinic.phoneDisplay}
+          </a>
+
+          <div class="mt-5 border-t border-brand-900/10 pt-5 text-sm">
+            <p class="flex items-start gap-2.5 text-ink-700">
+              <Icon name="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+              <span>{addressLine}<br />{clinic.address.district}, Madrid</span>
+            </p>
+            <p class="mt-3 flex items-start gap-2.5 text-ink-500">
+              <Icon name="shield" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+              <span>Presupuesto por escrito tras la valoración, sin compromiso.</span>
+            </p>
+          </div>
+        </div>
+
+        <GoogleReviewsBadge />
+      </aside>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="border-t border-brand-900/10 bg-white py-14" aria-labelledby="relacionados">
+          <div class="container-page">
+            <h2 id="relacionados" class="font-display text-2xl text-ink-900">
+              Otros tratamientos
+            </h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((item) => (
+                <TreatmentCard
+                  slug={item.id}
+                  title={item.data.shortTitle}
+                  summary={item.data.summary}
+                  duration={item.data.duration}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>

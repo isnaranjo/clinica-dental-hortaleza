@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "clinica-dental-hortaleza",
+  "compatibility_date": "2026-11-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "dist",
+  "kv_namespaces": [
+    {
+      "binding": "BOOKINGS",
+      "id": "3af7aeca154c4375afaabbe5947bff26"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/common/Navbar.astro';
+import Footer from '../components/common/Footer.astro';
+import FloatingCTA from '../components/common/FloatingCTA.astro';
+import { clinic } from '../data/clinic';
+import { buildGraph } from '../lib/schema-markup';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  extraSchema?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  image = '/assets/img/clinica-recepcion.webp',
+  noindex = false,
+  ogType = 'website',
+  extraSchema = [],
+} = Astro.props;
+
+const siteUrl = (Astro.site?.href ?? 'https://clinicadentalhortaleza.es/').replace(/\/+$/, '');
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+const fullTitle = title.includes(clinic.name) ? title : `${title} | ${clinic.name}`;
+const ogImage = new URL(image, siteUrl).href;
+
+const jsonLd = buildGraph({
+  siteUrl,
+  pageUrl: canonical,
+  extra: extraSchema,
+});
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0b4e53" />
+    <meta name="author" content={clinic.name} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={clinic.name} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand-800 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
+    >
+      Saltar al contenido
+    </a>
+
+    <Navbar />
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <Footer />
+    <FloatingCTA />
+  </body>
+</html>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from '../common/Icon.astro';
+import TreatmentCard from '../treatments/TreatmentCard.astro';
+
+const tratamientos = (await getCollection('tratamientos')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="py-16 sm:py-20" aria-labelledby="servicios-titulo">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Tratamientos</p>
+      <h2 id="servicios-titulo" class="mt-3 font-display text-3xl text-ink-900 sm:text-4xl">
+        Todo lo que tu boca necesita, en una sola clínica
+      </h2>
+      <p class="mt-4 text-ink-700">
+        Trabajamos con un plan de tratamiento claro y un presupuesto por escrito. Elige el
+        tratamiento que te interesa y te contamos cómo lo abordamos.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        tratamientos.map((tratamiento) => (
+          <TreatmentCard
+            slug={tratamiento.id}
+            title={tratamiento.data.shortTitle}
+            summary={tratamiento.data.summary}
+            duration={tratamiento.data.duration}
+          />
+        ))
+      }
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center gap-4">
+      <a href="/tratamientos" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 no-underline hover:underline">
+        Ver todos los tratamientos
+        <Icon name="arrow-right" class="h-4 w-4" />
+      </a>
+      <span class="text-sm text-ink-500">¿No sabes qué necesitas? Empieza por una revisión.</span>
+    </div>
+  </div>
+</section>

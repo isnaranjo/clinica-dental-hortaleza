@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalPage from '../../components/legal/LegalPage.astro';
+import { addressLine, clinic, siteUrl, telHref } from '../../data/clinic';
+import { breadcrumbSchema } from '../../lib/schema-markup';
+
+const extraSchema = [
+  breadcrumbSchema(siteUrl, [
+    { name: 'Inicio', path: '/' },
+    { name: 'Aviso legal', path: '/legal/aviso-legal/' },
+  ]),
+];
+---
+
+<!-- BORRADOR: completar los datos del titular y revisar con asesoría legal antes de publicar. -->
+<BaseLayout
+  title="Aviso legal"
+  description="Aviso legal de la Clínica Dental Hortaleza: titular, datos de contacto, condiciones de uso y propiedad intelectual."
+  noindex
+  extraSchema={extraSchema}
+>
+  <LegalPage
+    title="Aviso legal"
+    description="Este aviso legal es un documento base. Antes de publicar la web, el titular debe completar sus datos identificativos y validar el texto con su asesoría jurídica."
+    updated="12 de noviembre de 2026"
+  >
+    <h2>Titular del sitio</h2>
+    <p>
+      En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la
+      Información y de Comercio Electrónico, se informa de los datos del titular de este sitio web:
+    </p>
+    <ul>
+      <li><strong>Denominación:</strong> {clinic.name}</li>
+      <li><strong>NIF/CIF:</strong> [pendiente de completar]</li>
+      <li><strong>Domicilio:</strong> {addressLine}, {clinic.address.district}, Madrid</li>
+      <li><strong>Teléfono:</strong> <a href={telHref}>{clinic.phoneDisplay}</a></li>
+      <li><strong>Correo electrónico:</strong> [pendiente de completar]</li>
+      <li><strong>N.º de registro sanitario / colegiación:</strong> [pendiente de completar]</li>
+    </ul>
+
+    <h2>Objeto y condiciones de uso</h2>
+    <p>
+      Este sitio web tiene carácter informativo y permite solicitar citas y enviar consultas. El
+      acceso es gratuito y atribuye la condición de usuario a quien lo utiliza, que se compromete a
+      hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas.
+    </p>
+    <p>
+      La información publicada no sustituye una valoración clínica presencial. Los tratamientos,
+      tiempos y resultados descritos son orientativos y dependen del estado de salud bucodental de
+      cada paciente.
+    </p>
+
+    <h2>Solicitudes de cita</h2>
+    <p>
+      Las citas solicitadas a través de la web quedan pendientes de confirmación por recepción. La
+      solicitud no constituye por sí misma un contrato de prestación de servicios sanitarios ni
+      garantiza la disponibilidad del profesional hasta que la clínica la confirme.
+    </p>
+
+    <h2>Propiedad intelectual e industrial</h2>
+    <p>
+      Los textos, imágenes, logotipos y el resto de contenidos de este sitio son titularidad de la
+      clínica o se utilizan con autorización. Queda prohibida su reproducción, distribución o
+      transformación sin autorización expresa.
+    </p>
+
+    <h2>Responsabilidad</h2>
+    <p>
+      La clínica no se responsabiliza de los daños derivados de un uso incorrecto del sitio ni de
+      las interrupciones del servicio por causas técnicas ajenas a su control. Los enlaces a sitios
+      de terceros se ofrecen únicamente como referencia.
+    </p>
+
+    <h2>Legislación aplicable</h2>
+    <p>
+      Esta relación se rige por la legislación española. Para cualquier controversia serán
+      competentes los juzgados y tribunales del domicilio del usuario cuando la normativa de
+      consumo así lo establezca.
+    </p>
+  </LegalPage>
+</BaseLayout>

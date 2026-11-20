@@ -1,0 +1,37 @@
+{
+  "name": "clinica-dental-hortaleza",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "dev:cms": "tinacms dev -c \"astro dev\"",
+    "build": "astro build",
+    "build:cms": "tinacms build --local && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "images": "node scripts/optimize-images.mjs",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name clinica-dental-hortaleza"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.4.9",
+    "@astrojs/sitemap": "^3",
+    "@tailwindcss/vite": "^4",
+    "astro": "^7.4.13",
+    "resend": "^4",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4",
+    "better-sqlite3": "^12.10.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "@tinacms/cli": "^1.0.4",
+    "tinacms": "^1.2.1",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "better-sqlite3": "^12.10.0"
+    }
+  }
+}

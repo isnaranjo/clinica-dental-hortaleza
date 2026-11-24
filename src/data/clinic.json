@@ -1,10 +1,11 @@
 {
   "name": "Clínica Dental Hortaleza",
-  "slogan": "Tu sonrisa es nuestra prioridad",
+  "slogan": "Cuidamos de ti, cuidamos de tu sonrisa",
   "phoneDisplay": "913 82 08 64",
   "phoneE164": "+34913820864",
-  "whatsapp": "+34696695884",
-  "email": null,
+  "whatsapp": "+34656630227",
+  "instagram": "clinica_hortaleza",
+  "email": "clinicahortaleza.madrid@gmail.com",
   "address": {
     "street": "Calle Boyacá, n.º 5, 1.º Dcha",
     "postalCode": "28033",
@@ -22,19 +23,18 @@
     "count": 57,
     "source": "Google"
   },
-  "hoursNote": "Lunes a jueves de 09:30 a 14:00 y 16:00 a 20:00. Viernes solo de 09:30 a 14:00. Si necesitas una hora concreta, llámanos al 913 82 08 64 o escríbenos al 696695884 y te la confirmamos.",
+  "hoursNote": "Lunes a jueves de 09:30 a 13:30. Viernes de 09:30 a 13:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 o escríbenos al 656 63 02 27 y te la confirmamos.",
   "openingHours": [
     {
       "days": [1, 2, 3, 4],
       "ranges": [
-        ["09:30", "14:00"],
-        ["16:00", "20:00"]
+        ["09:30", "13:30"]
       ]
     },
     {
       "days": [5],
       "ranges": [
-        ["09:30", "14:00"]
+        ["09:30", "13:30"]
       ]
     }
   ],

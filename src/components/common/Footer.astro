@@ -1,5 +1,5 @@
 ---
-import { addressLine, clinic, telHref } from '../../data/clinic';
+import { addressLine, clinic, instagramHref, telHref, whatsappHref } from '../../data/clinic';
 import { openingHoursLines } from '../../lib/format';
 import Icon from './Icon.astro';
 import GoogleReviewsBadge from './GoogleReviewsBadge.astro';
@@ -50,6 +50,26 @@ const year = new Date().getFullYear();
               <Icon name="mail" class="h-4 w-4 shrink-0 text-brand-600" />
               <a href={`mailto:${clinic.email}`} class="text-brand-800 no-underline hover:underline">
                 {clinic.email}
+              </a>
+            </p>
+          )
+        }
+        {
+          whatsappHref && (
+            <p class="flex items-center gap-2.5">
+              <Icon name="whatsapp" class="h-4 w-4 shrink-0 text-brand-600" />
+              <a href={whatsappHref} class="text-brand-800 no-underline hover:underline" target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+            </p>
+          )
+        }
+        {
+          instagramHref && (
+            <p class="flex items-center gap-2.5">
+              <Icon name="instagram" class="h-4 w-4 shrink-0 text-brand-600" />
+              <a href={instagramHref} class="text-brand-800 no-underline hover:underline" target="_blank" rel="noopener noreferrer">
+                Instagram
               </a>
             </p>
           )

@@ -1,5 +1,5 @@
 ---
-import { addressLine, clinic, ratingLabel, telHref } from '../../data/clinic';
+import { addressLine, clinic, instagramHref, ratingLabel, telHref, whatsappHref } from '../../data/clinic';
 import Icon from './Icon.astro';
 
 const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
@@ -12,7 +12,7 @@ const links = [
   { href: '/contacto', label: 'Contacto' },
 ];
 
-const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 ---
 
 <div class="hidden bg-brand-900 text-brand-50 md:block">
@@ -26,12 +26,38 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(`${h
         <Icon name="star" class="h-3.5 w-3.5 text-gold-400" />
         <span>{ratingLabel} en Google</span>
       </span>
+      {
+        instagramHref && (
+          <a
+            href={instagramHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="text-brand-200 no-underline hover:text-white"
+          >
+            <Icon name="instagram" class="h-4 w-4" />
+          </a>
+        )
+      }
+      {
+        whatsappHref && (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            class="text-brand-200 no-underline hover:text-white"
+          >
+            <Icon name="whatsapp" class="h-4 w-4" />
+          </a>
+        )
+      }
       <a
         href={telHref}
         class="flex items-center gap-1.5 font-semibold text-white no-underline hover:text-brand-200"
       >
         <Icon name="phone" class="h-4 w-4" />
-        {clinic.phoneDisplay}
+        <span class="hidden sm:inline">{clinic.phoneDisplay}</span>
       </a>
     </div>
   </div>
@@ -76,6 +102,24 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(`${h
         Pedir cita
       </a>
     </div>
+
+    {
+      whatsappHref && (
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <Icon name="whatsapp" class="h-4 w-4" />
+          WhatsApp
+        </a>
+      )
+    }
+
+    {
+      instagramHref && (
+        <a href={instagramHref} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <Icon name="instagram" class="h-4 w-4" />
+          Instagram
+        </a>
+      )
+    }
 
     <button
       id="menu-toggle"

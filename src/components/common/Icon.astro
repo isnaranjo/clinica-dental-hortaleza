@@ -17,7 +17,8 @@ type IconName =
   | 'arrow-right'
   | 'check'
   | 'mail'
-  | 'shield';
+  | 'shield'
+  | 'instagram';
 
 interface IconDefinition {
   body: string;
@@ -79,6 +80,9 @@ const ICONS: Record<IconName, IconDefinition> = {
   },
   shield: {
     body: '<path d="M12 21s8-3.6 8-9.5V5.5L12 2.5 4 5.5v6c0 5.9 8 9.5 8 9.5Z" /><path d="m8.5 11.5 2.5 2.5 4.5-4.5" />',
+  },
+  instagram: {
+    body: '<rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><rect x="7" y="7" width="10" height="10" rx="4" ry="4" /><circle cx="16.5" cy="7.5" r="1.25" />',
   },
 };
 

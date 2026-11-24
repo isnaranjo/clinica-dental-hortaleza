@@ -26,12 +26,15 @@ function json(body: unknown, status = 200): Response {
   });
 }
 
-function readEnv(locals: unknown): Env {
-  const runtime = (locals as { runtime?: { env?: Env } } | null)?.runtime;
-  return {
-    ...(import.meta.env as unknown as Env),
-    ...(runtime?.env ?? {}),
-  };
+function readEnv(localsParam?: unknown): Env {
+  const base = import.meta.env as unknown as Env;
+  if (localsParam) {
+    const env = (localsParam as { runtime?: { env?: Env } }).runtime?.env;
+    if (env) {
+      return { ...base, ...env };
+    }
+  }
+  return base;
 }
 
 function asString(value: unknown, maxLength: number): string {

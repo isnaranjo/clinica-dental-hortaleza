@@ -25,6 +25,7 @@ export interface ClinicData {
   phoneDisplay: string;
   phoneE164: string;
   whatsapp: string | null;
+  instagram: string | null;
   email: string | null;
   address: {
     street: string;
@@ -60,6 +61,10 @@ export const telHref = `tel:${clinic.phoneE164}`;
 
 export const whatsappHref = clinic.whatsapp
   ? `https://wa.me/${clinic.whatsapp.replace(/[^0-9]/g, '')}`
+  : null;
+
+export const instagramHref = clinic.instagram
+  ? `https://instagram.com/${clinic.instagram}`
   : null;
 
 export const ratingLabel = `${String(clinic.rating.value).replace('.', ',')} ★ · ${clinic.rating.count} reseñas`;

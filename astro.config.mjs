@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://clinicadentalhortaleza.es',
   output: 'static',
-  adapter: cloudflare(),
+  adapter: cloudflare({ prerenderEnvironment: 'node' }),
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/legal/'),

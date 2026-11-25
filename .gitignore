@@ -10,3 +10,7 @@ wrangler/
 tina/__generated__/
 .DS_Store
 *.log
+.wrangler/
+kill-*.ps1
+test-*.ps1
+test-*.json

@@ -5,9 +5,10 @@ import Icon from './Icon.astro';
 interface Props {
   class?: string;
   compact?: boolean;
+  emphasis?: boolean;
 }
 
-const { class: className = '', compact = false } = Astro.props;
+const { class: className = '', compact = false, emphasis = false } = Astro.props;
 const value = clinic.rating.value;
 const percent = Math.max(0, Math.min(100, (value / 5) * 100));
 const valueLabel = value.toFixed(1).replace('.', ',');
@@ -39,8 +40,12 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
       <Icon name="star" class="h-4 w-4 shrink-0" />
     </span>
   </span>
-  <span class="text-sm font-semibold text-ink-900">{valueLabel}</span>
+  <span class:list={['font-semibold text-ink-900', emphasis ? 'text-xl sm:text-2xl' : 'text-sm']}>
+    {valueLabel}
+  </span>
   {!compact && (
-    <span class="text-xs text-ink-500">{clinic.rating.count} reseñas en {clinic.rating.source}</span>
+    <span class:list={['text-ink-500', emphasis ? 'text-sm sm:text-base' : 'text-xs']}>
+      {clinic.rating.count} reseñas en {clinic.rating.source}
+    </span>
   )}
 </a>

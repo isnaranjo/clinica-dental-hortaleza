@@ -7,7 +7,7 @@ order: 6
 bookingSlug: "diagnostico-digital"
 duration: 30
 image: "/assets/img/clinica-recepcion.webp"
-imageAlt: "Recepción de la Clínica Dental Hortaleza"
+imageAlt: "Recepción de la Clínica Dental Hortaleza, donde se inicia la cita de diagnóstico digital"
 gallery:
   - src: "/assets/img/clinica-sala-verde.webp"
     alt: "Sala de tratamiento de la Clínica Dental Hortaleza"

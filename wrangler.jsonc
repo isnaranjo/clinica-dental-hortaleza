@@ -1,13 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "clinica-dental-hortaleza",
+  "account_id": "44b14932f30b8799cf4014c12ffc916c",
   "compatibility_date": "2026-11-17",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": "dist",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist/client"
+  },
   "kv_namespaces": [
     {
       "binding": "BOOKINGS",
-      "id": "3af7aeca154c4375afaabbe5947bff26"
+      "id": "9a7afe243457486ca636435d5ff2f97e"
+    },
+    {
+      "binding": "SESSION",
+      "id": "43b950e69bdd4cdda1b9239347a10284"
     }
-  ]
+  ],
+  "images": {
+    "binding": "IMAGES"
+  }
 }

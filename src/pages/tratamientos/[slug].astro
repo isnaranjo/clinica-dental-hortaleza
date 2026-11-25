@@ -9,6 +9,8 @@ import GoogleReviewsBadge from '../../components/common/GoogleReviewsBadge.astro
 import { addressLine, clinic, siteUrl, telHref } from '../../data/clinic';
 import { breadcrumbSchema, faqSchema, serviceSchema } from '../../lib/schema-markup';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const entries = await getCollection('tratamientos');
   return entries.map((entry) => ({

@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { sendContactEmail } from '../../lib/email';
 
 export const prerender = false;
@@ -15,15 +16,8 @@ function json(body: unknown, status = 200): Response {
   });
 }
 
-function readEnv(localsParam?: unknown): Env {
-  const base = import.meta.env as unknown as Env;
-  if (localsParam) {
-    const env = (localsParam as { runtime?: { env?: Env } }).runtime?.env;
-    if (env) {
-      return { ...base, ...env };
-    }
-  }
-  return base;
+function readEnv(): Env {
+  return env as unknown as Env;
 }
 
 function asString(value: unknown, maxLength: number): string {
@@ -32,7 +26,7 @@ function asString(value: unknown, maxLength: number): string {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   let payload: Record<string, unknown>;
   try {
     payload = (await request.json()) as Record<string, unknown>;
@@ -66,7 +60,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return json({ error: 'Necesitamos tu consentimiento para responderte.' }, 400);
   }
 
-  const result = await sendContactEmail({ name, email, phone, message }, readEnv(locals));
+  const result = await sendContactEmail({ name, email, phone, message }, readEnv());
 
   if (!result.sent) {
     return json(

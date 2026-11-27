@@ -135,15 +135,19 @@ export async function sendBookingEmails(
   );
 
   try {
-    await resend.emails.send({
+    const patientRes = await resend.emails.send({
       from,
       to: [data.email],
       replyTo: to,
       subject: singleLine(`Cita solicitada · ${data.treatmentName} · ${prettyDate} ${data.time}`),
       html: patientHtml,
     });
+    if (patientRes.error) {
+      console.error('[email] Error al enviar la confirmación al paciente', patientRes.error);
+      return { sent: false, reason: 'send-error' };
+    }
 
-    await resend.emails.send({
+    const receptionRes = await resend.emails.send({
       from,
       to: [to],
       replyTo: data.email,
@@ -152,6 +156,10 @@ export async function sendBookingEmails(
       ),
       html: receptionHtml,
     });
+    if (receptionRes.error) {
+      console.error('[email] Error al enviar el aviso de cita a recepción', receptionRes.error);
+      return { sent: false, reason: 'send-error' };
+    }
 
     return { sent: true };
   } catch (error) {
@@ -181,13 +189,17 @@ export async function sendContactEmail(
   );
 
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from,
       to: [to],
       replyTo: data.email,
       subject: singleLine(`Consulta web · ${data.name}`),
       html,
     });
+    if (error) {
+      console.error('[email] Error al enviar el mensaje de contacto', error);
+      return { sent: false, reason: 'send-error' };
+    }
     return { sent: true };
   } catch (error) {
     console.error('[email] Error al enviar el mensaje de contacto', error);

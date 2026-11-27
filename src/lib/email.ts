@@ -27,7 +27,7 @@ export interface SendResult {
   reason?: string;
 }
 
-const PROD_FROM = 'Clínica Dental Hortaleza <citas@clinicadentalhortaleza.es>';
+const PROD_FROM = 'Clínica Dental Hortaleza <citas@clinicadentalhortaleza.com>';
 const DEV_FROM = 'Clínica Dental Hortaleza <onboarding@resend.dev>';
 
 function escapeHtml(value: string): string {

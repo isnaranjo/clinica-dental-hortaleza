@@ -24,7 +24,7 @@ const {
   extraSchema = [],
 } = Astro.props;
 
-const siteUrl = (Astro.site?.href ?? 'https://clinicadentalhortaleza.es/').replace(/\/+$/, '');
+const siteUrl = (Astro.site?.href ?? 'https://clinicadentalhortaleza.com/').replace(/\/+$/, '');
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
 const fullTitle = title.includes(clinic.name) ? title : `${title} | ${clinic.name}`;
 const ogImage = new URL(image, siteUrl).href;

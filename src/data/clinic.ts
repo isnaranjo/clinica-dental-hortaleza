@@ -52,7 +52,7 @@ export interface ClinicData {
 export const clinic = clinicData as unknown as ClinicData;
 
 /** Dominio canónico del sitio (debe coincidir con `site` en astro.config.mjs). */
-export const siteUrl = 'https://clinicadentalhortaleza.es';
+export const siteUrl = 'https://clinicadentalhortaleza.com';
 
 /** Dirección en una sola línea, idéntica en cabecera, pie, contacto y Schema.org. */
 export const addressLine = `${clinic.address.street}, ${clinic.address.postalCode} ${clinic.address.city}`;

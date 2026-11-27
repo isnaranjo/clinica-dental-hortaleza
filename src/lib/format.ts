@@ -17,7 +17,7 @@ export interface HoursLine {
 
 /** Horario de apertura listo para mostrar (agrupa los días contiguos). */
 export function openingHoursLines(): HoursLine[] {
-  return clinic.openingHours.map((schedule) => {
+  const lines = clinic.openingHours.map((schedule) => {
     const first = schedule.days[0];
     const last = schedule.days[schedule.days.length - 1];
 
@@ -34,6 +34,13 @@ export function openingHoursLines(): HoursLine[] {
       hours: schedule.ranges.map(([open, close]) => `${open} – ${close}`).join(' · '),
     };
   });
+
+  const openDays = new Set(clinic.openingHours.flatMap((schedule) => schedule.days));
+  if (!openDays.has(6) && !openDays.has(0)) {
+    lines.push({ days: 'Sábado y domingo', hours: 'Cerrado' });
+  }
+
+  return lines;
 }
 
 /** "14 de noviembre de 2026" */

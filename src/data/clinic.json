@@ -23,12 +23,13 @@
     "count": 57,
     "source": "Google"
   },
-  "hoursNote": "Lunes a jueves de 09:30 a 13:30. Viernes de 09:30 a 13:30. Si necesitas una hora concreta, llámanos al 913 82 08 64 o escríbenos al 656 63 02 27 y te la confirmamos.",
+  "hoursNote": "Lunes a jueves de 9:30 a 13:30 y de 16:00 a 20:00. Viernes de 9:30 a 13:30. Sábado y domingo cerrado. Si necesitas una hora concreta, llámanos al 913 82 08 64 o escríbenos al 656 63 02 27 y te la confirmamos.",
   "openingHours": [
     {
       "days": [1, 2, 3, 4],
       "ranges": [
-        ["09:30", "13:30"]
+        ["09:30", "13:30"],
+        ["16:00", "20:00"]
       ]
     },
     {

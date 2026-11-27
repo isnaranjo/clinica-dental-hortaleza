@@ -103,24 +103,6 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(href
       </a>
     </div>
 
-    {
-      whatsappHref && (
-        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <Icon name="whatsapp" class="h-4 w-4" />
-          WhatsApp
-        </a>
-      )
-    }
-
-    {
-      instagramHref && (
-        <a href={instagramHref} target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          <Icon name="instagram" class="h-4 w-4" />
-          Instagram
-        </a>
-      )
-    }
-
     <button
       id="menu-toggle"
       type="button"

@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Migrado a Cloudflare Workers: el binding ASSETS no está reservado en Workers.
 export default defineConfig({
-  site: 'https://clinicadentalhortaleza.es',
+  site: 'https://clinicadentalhortaleza.com',
   output: 'server',
   adapter: cloudflare({}),
   integrations: [

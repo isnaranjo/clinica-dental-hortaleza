@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://clinicadentalhortaleza.es/sitemap-index.xml
+Sitemap: https://clinicadentalhortaleza.com/sitemap-index.xml
